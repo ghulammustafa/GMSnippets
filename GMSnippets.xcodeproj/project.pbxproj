@@ -36,6 +36,18 @@
 		45D867001A2DC3A0003345DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D866E51A2DC3A0003345DA /* main.m */; };
 		45D867041A2DCBF8003345DA /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D867021A2DCBF8003345DA /* GMMapViewController.m */; };
 		45D867051A2DCBF8003345DA /* GMMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D867031A2DCBF8003345DA /* GMMapViewController.xib */; };
+		45D867091A2DD313003345DA /* GMPrintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D867071A2DD313003345DA /* GMPrintViewController.m */; };
+		45D8670A1A2DD313003345DA /* GMPrintViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D867081A2DD313003345DA /* GMPrintViewController.xib */; };
+		45D8670C1A2DD5F2003345DA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D8670B1A2DD5F2003345DA /* MapKit.framework */; };
+		45D8670E1A2DD5F7003345DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D8670D1A2DD5F7003345DA /* CoreLocation.framework */; };
+		45D867121A2DD626003345DA /* GMDocumentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D867101A2DD626003345DA /* GMDocumentsViewController.m */; };
+		45D867131A2DD626003345DA /* GMDocumentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D867111A2DD626003345DA /* GMDocumentsViewController.xib */; };
+		45D867261A2DD7C3003345DA /* TOWebViewControllerLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45D867151A2DD7C3003345DA /* TOWebViewControllerLocalizable.strings */; };
+		45D867271A2DD7C3003345DA /* TOActivityChrome.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D8671D1A2DD7C3003345DA /* TOActivityChrome.m */; };
+		45D867281A2DD7C3003345DA /* TOActivitySafari.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D8671F1A2DD7C3003345DA /* TOActivitySafari.m */; };
+		45D867291A2DD7C3003345DA /* TOWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D867211A2DD7C3003345DA /* TOWebViewController.m */; };
+		45D8672A1A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D867231A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.m */; };
+		45D8672E1A2DD896003345DA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D8672D1A2DD896003345DA /* MBProgressHUD.m */; };
 		45FD1397198A08E700C5EA8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1396198A08E700C5EA8C /* Foundation.framework */; };
 		45FD1399198A08E700C5EA8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1398198A08E700C5EA8C /* CoreGraphics.framework */; };
 		45FD139B198A08E700C5EA8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD139A198A08E700C5EA8C /* UIKit.framework */; };
@@ -96,6 +108,32 @@
 		45D867011A2DCBF8003345DA /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
 		45D867021A2DCBF8003345DA /* GMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMapViewController.m; sourceTree = "<group>"; };
 		45D867031A2DCBF8003345DA /* GMMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMapViewController.xib; sourceTree = "<group>"; };
+		45D867061A2DD313003345DA /* GMPrintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMPrintViewController.h; sourceTree = "<group>"; };
+		45D867071A2DD313003345DA /* GMPrintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMPrintViewController.m; sourceTree = "<group>"; };
+		45D867081A2DD313003345DA /* GMPrintViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMPrintViewController.xib; sourceTree = "<group>"; };
+		45D8670B1A2DD5F2003345DA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		45D8670D1A2DD5F7003345DA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		45D8670F1A2DD626003345DA /* GMDocumentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDocumentsViewController.h; sourceTree = "<group>"; };
+		45D867101A2DD626003345DA /* GMDocumentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDocumentsViewController.m; sourceTree = "<group>"; };
+		45D867111A2DD626003345DA /* GMDocumentsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMDocumentsViewController.xib; sourceTree = "<group>"; };
+		45D867161A2DD7C3003345DA /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/TOWebViewControllerLocalizable.strings; sourceTree = "<group>"; };
+		45D867171A2DD7C3003345DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TOWebViewControllerLocalizable.strings; sourceTree = "<group>"; };
+		45D867181A2DD7C3003345DA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/TOWebViewControllerLocalizable.strings; sourceTree = "<group>"; };
+		45D867191A2DD7C3003345DA /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/TOWebViewControllerLocalizable.strings; sourceTree = "<group>"; };
+		45D8671A1A2DD7C3003345DA /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/TOWebViewControllerLocalizable.strings; sourceTree = "<group>"; };
+		45D8671B1A2DD7C3003345DA /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/TOWebViewControllerLocalizable.strings; sourceTree = "<group>"; };
+		45D8671C1A2DD7C3003345DA /* TOActivityChrome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOActivityChrome.h; sourceTree = "<group>"; };
+		45D8671D1A2DD7C3003345DA /* TOActivityChrome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActivityChrome.m; sourceTree = "<group>"; };
+		45D8671E1A2DD7C3003345DA /* TOActivitySafari.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOActivitySafari.h; sourceTree = "<group>"; };
+		45D8671F1A2DD7C3003345DA /* TOActivitySafari.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOActivitySafari.m; sourceTree = "<group>"; };
+		45D867201A2DD7C3003345DA /* TOWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOWebViewController.h; sourceTree = "<group>"; };
+		45D867211A2DD7C3003345DA /* TOWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOWebViewController.m; sourceTree = "<group>"; };
+		45D867221A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TOWebViewControllerIcons.h"; sourceTree = "<group>"; };
+		45D867231A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TOWebViewControllerIcons.m"; sourceTree = "<group>"; };
+		45D867241A2DD7C3003345DA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/TOWebViewControllerLocalizable.strings"; sourceTree = "<group>"; };
+		45D867251A2DD7C3003345DA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/TOWebViewControllerLocalizable.strings"; sourceTree = "<group>"; };
+		45D8672C1A2DD896003345DA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		45D8672D1A2DD896003345DA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		45FD1393198A08E700C5EA8C /* GMSnippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMSnippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FD1396198A08E700C5EA8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45FD1398198A08E700C5EA8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -107,6 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45D8670E1A2DD5F7003345DA /* CoreLocation.framework in Frameworks */,
+				45D8670C1A2DD5F2003345DA /* MapKit.framework in Frameworks */,
 				459A414B198F5B7000644F86 /* CoreTelephony.framework in Frameworks */,
 				45FD1399198A08E700C5EA8C /* CoreGraphics.framework in Frameworks */,
 				45FD139B198A08E700C5EA8C /* UIKit.framework in Frameworks */,
@@ -147,6 +187,12 @@
 				45D867011A2DCBF8003345DA /* GMMapViewController.h */,
 				45D867021A2DCBF8003345DA /* GMMapViewController.m */,
 				45D867031A2DCBF8003345DA /* GMMapViewController.xib */,
+				45D867061A2DD313003345DA /* GMPrintViewController.h */,
+				45D867071A2DD313003345DA /* GMPrintViewController.m */,
+				45D867081A2DD313003345DA /* GMPrintViewController.xib */,
+				45D8670F1A2DD626003345DA /* GMDocumentsViewController.h */,
+				45D867101A2DD626003345DA /* GMDocumentsViewController.m */,
+				45D867111A2DD626003345DA /* GMDocumentsViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,6 +200,8 @@
 		45D866B31A2DC3A0003345DA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				45D8672B1A2DD896003345DA /* MBProgressHUD */,
+				45D867141A2DD7C3003345DA /* TOWebViewController */,
 				45D866B41A2DC3A0003345DA /* AFNetworking */,
 				45D866C81A2DC3A0003345DA /* Reachability */,
 				45D866CB1A2DC3A0003345DA /* UIKit+AFNetworking */,
@@ -241,6 +289,31 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		45D867141A2DD7C3003345DA /* TOWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				45D867151A2DD7C3003345DA /* TOWebViewControllerLocalizable.strings */,
+				45D8671C1A2DD7C3003345DA /* TOActivityChrome.h */,
+				45D8671D1A2DD7C3003345DA /* TOActivityChrome.m */,
+				45D8671E1A2DD7C3003345DA /* TOActivitySafari.h */,
+				45D8671F1A2DD7C3003345DA /* TOActivitySafari.m */,
+				45D867201A2DD7C3003345DA /* TOWebViewController.h */,
+				45D867211A2DD7C3003345DA /* TOWebViewController.m */,
+				45D867221A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.h */,
+				45D867231A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.m */,
+			);
+			path = TOWebViewController;
+			sourceTree = "<group>";
+		};
+		45D8672B1A2DD896003345DA /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				45D8672C1A2DD896003345DA /* MBProgressHUD.h */,
+				45D8672D1A2DD896003345DA /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		45FD138A198A08E700C5EA8C = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +334,8 @@
 		45FD1395198A08E700C5EA8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45D8670D1A2DD5F7003345DA /* CoreLocation.framework */,
+				45D8670B1A2DD5F2003345DA /* MapKit.framework */,
 				459A414A198F5B7000644F86 /* CoreTelephony.framework */,
 				45FD1396198A08E700C5EA8C /* Foundation.framework */,
 				45FD1398198A08E700C5EA8C /* CoreGraphics.framework */,
@@ -295,7 +370,7 @@
 		45FD138B198A08E700C5EA8C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = BP;
+				CLASSPREFIX = GM;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Learning;
 			};
@@ -306,6 +381,13 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				es,
+				ja,
+				ko,
+				pl,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 45FD138A198A08E700C5EA8C;
 			productRefGroup = 45FD1394198A08E700C5EA8C /* Products */;
@@ -323,7 +405,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				45D866FD1A2DC3A0003345DA /* Sample.mov in Resources */,
+				45D8670A1A2DD313003345DA /* GMPrintViewController.xib in Resources */,
 				45D867051A2DCBF8003345DA /* GMMapViewController.xib in Resources */,
+				45D867261A2DD7C3003345DA /* TOWebViewControllerLocalizable.strings in Resources */,
+				45D867131A2DD626003345DA /* GMDocumentsViewController.xib in Resources */,
 				45D866FF1A2DC3A0003345DA /* InfoPlist.strings in Resources */,
 				45D866E81A2DC3A0003345DA /* GMViewController.xib in Resources */,
 				45D866FB1A2DC3A0003345DA /* Images.xcassets in Resources */,
@@ -341,10 +426,12 @@
 				45D866EF1A2DC3A0003345DA /* AFURLRequestSerialization.m in Sources */,
 				45D866F71A2DC3A0003345DA /* UIImageView+AFNetworking.m in Sources */,
 				45D866EE1A2DC3A0003345DA /* AFURLConnectionOperation.m in Sources */,
+				45D867271A2DD7C3003345DA /* TOActivityChrome.m in Sources */,
 				45D866ED1A2DC3A0003345DA /* AFSecurityPolicy.m in Sources */,
 				45D866F81A2DC3A0003345DA /* UIProgressView+AFNetworking.m in Sources */,
 				45D866E91A2DC3A0003345DA /* AFHTTPRequestOperation.m in Sources */,
 				45D866F11A2DC3A0003345DA /* AFURLSessionManager.m in Sources */,
+				45D8672E1A2DD896003345DA /* MBProgressHUD.m in Sources */,
 				45D866F01A2DC3A0003345DA /* AFURLResponseSerialization.m in Sources */,
 				45D866F61A2DC3A0003345DA /* UIButton+AFNetworking.m in Sources */,
 				45D866F41A2DC3A0003345DA /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -353,17 +440,40 @@
 				45D866FA1A2DC3A0003345DA /* UIWebView+AFNetworking.m in Sources */,
 				45D867041A2DCBF8003345DA /* GMMapViewController.m in Sources */,
 				45D866EB1A2DC3A0003345DA /* AFHTTPSessionManager.m in Sources */,
+				45D867091A2DD313003345DA /* GMPrintViewController.m in Sources */,
 				45D866F51A2DC3A0003345DA /* UIAlertView+AFNetworking.m in Sources */,
 				45D866EA1A2DC3A0003345DA /* AFHTTPRequestOperationManager.m in Sources */,
+				45D867281A2DD7C3003345DA /* TOActivitySafari.m in Sources */,
 				45D866F31A2DC3A0003345DA /* AFNetworkActivityIndicatorManager.m in Sources */,
+				45D867291A2DD7C3003345DA /* TOWebViewController.m in Sources */,
+				45D867121A2DD626003345DA /* GMDocumentsViewController.m in Sources */,
 				45D866EC1A2DC3A0003345DA /* AFNetworkReachabilityManager.m in Sources */,
 				45D866F21A2DC3A0003345DA /* Reachability.m in Sources */,
+				45D8672A1A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				45D867001A2DC3A0003345DA /* main.m in Sources */,
 				45D866E61A2DC3A0003345DA /* GMAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		45D867151A2DD7C3003345DA /* TOWebViewControllerLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45D867161A2DD7C3003345DA /* de */,
+				45D867171A2DD7C3003345DA /* en */,
+				45D867181A2DD7C3003345DA /* es */,
+				45D867191A2DD7C3003345DA /* ja */,
+				45D8671A1A2DD7C3003345DA /* ko */,
+				45D8671B1A2DD7C3003345DA /* pl */,
+				45D867241A2DD7C3003345DA /* zh-Hans */,
+				45D867251A2DD7C3003345DA /* zh-Hant */,
+			);
+			name = TOWebViewControllerLocalizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		45FD13C3198A08E800C5EA8C /* Debug */ = {
