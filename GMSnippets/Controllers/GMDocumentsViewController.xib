@@ -16,8 +16,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZnF-os-3pj">
-                    <rect key="frame" x="243" y="285" width="114" height="30"/>
-                    <state key="normal" title="Show Document">
+                    <rect key="frame" x="214" y="285" width="172" height="30"/>
+                    <state key="normal" title="Show Remote Document">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>

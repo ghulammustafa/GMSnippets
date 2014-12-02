@@ -13,6 +13,7 @@
 #import "GMViewController.h"
 #import "GMMapViewController.h"
 #import "GMPrintViewController.h"
+#import "GMDocumentsViewController.h"
 
 #import "AFNetworking.h"
 #import "Reachability.h"
@@ -24,6 +25,7 @@ typedef enum kGMAction {
     kGMActionCarrierInformation,
     kGMActionMapsPlayground,
     kGMActionPrintPlayground,
+    kGMActionDocumentsPlayground,
     kGMActionCount
 } kGMAction;
 
@@ -106,6 +108,11 @@ typedef enum kGMAction {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
             
+        case kGMActionDocumentsPlayground:
+            cell.textLabel.text = @"Documents Playground";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            break;
+            
         default:
             cell.textLabel.text = @"N/A";
             break;
@@ -142,6 +149,9 @@ typedef enum kGMAction {
         case kGMActionPrintPlayground:
             [self showPrintViewController];
             break;
+            
+        case kGMActionDocumentsPlayground:
+            [self showDocumentsViewController];
         default:
             break;
     }
@@ -149,6 +159,12 @@ typedef enum kGMAction {
 
 #pragma mark -
 #pragma mark Action methods
+
+- (void)showDocumentsViewController {
+    GMDocumentsViewController *viewController = [[GMDocumentsViewController alloc] initWithNibName:@"GMDocumentsViewController" bundle:nil];
+    viewController.title = @"Documents Playground";
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 - (void)showPrintViewController {
     GMPrintViewController *viewController = [[GMPrintViewController alloc] initWithNibName:@"GMPrintViewController" bundle:nil];
