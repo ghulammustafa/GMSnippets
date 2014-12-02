@@ -34,6 +34,8 @@
 		45D866FD1A2DC3A0003345DA /* Sample.mov in Resources */ = {isa = PBXBuildFile; fileRef = 45D866E01A2DC3A0003345DA /* Sample.mov */; };
 		45D866FF1A2DC3A0003345DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45D866E41A2DC3A0003345DA /* InfoPlist.strings */; };
 		45D867001A2DC3A0003345DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D866E51A2DC3A0003345DA /* main.m */; };
+		45D867041A2DCBF8003345DA /* GMMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D867021A2DCBF8003345DA /* GMMapViewController.m */; };
+		45D867051A2DCBF8003345DA /* GMMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D867031A2DCBF8003345DA /* GMMapViewController.xib */; };
 		45FD1397198A08E700C5EA8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1396198A08E700C5EA8C /* Foundation.framework */; };
 		45FD1399198A08E700C5EA8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1398198A08E700C5EA8C /* CoreGraphics.framework */; };
 		45FD139B198A08E700C5EA8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD139A198A08E700C5EA8C /* UIKit.framework */; };
@@ -91,6 +93,9 @@
 		45D866E31A2DC3A0003345DA /* GMSnippets-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GMSnippets-Prefix.pch"; sourceTree = "<group>"; };
 		45D866E41A2DC3A0003345DA /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		45D866E51A2DC3A0003345DA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		45D867011A2DCBF8003345DA /* GMMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMMapViewController.h; sourceTree = "<group>"; };
+		45D867021A2DCBF8003345DA /* GMMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMMapViewController.m; sourceTree = "<group>"; };
+		45D867031A2DCBF8003345DA /* GMMapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMMapViewController.xib; sourceTree = "<group>"; };
 		45FD1393198A08E700C5EA8C /* GMSnippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMSnippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FD1396198A08E700C5EA8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45FD1398198A08E700C5EA8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,6 +144,9 @@
 				45D866B01A2DC3A0003345DA /* GMViewController.h */,
 				45D866B11A2DC3A0003345DA /* GMViewController.m */,
 				45D866B21A2DC3A0003345DA /* GMViewController.xib */,
+				45D867011A2DCBF8003345DA /* GMMapViewController.h */,
+				45D867021A2DCBF8003345DA /* GMMapViewController.m */,
+				45D867031A2DCBF8003345DA /* GMMapViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -315,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45D866FD1A2DC3A0003345DA /* Sample.mov in Resources */,
+				45D867051A2DCBF8003345DA /* GMMapViewController.xib in Resources */,
 				45D866FF1A2DC3A0003345DA /* InfoPlist.strings in Resources */,
 				45D866E81A2DC3A0003345DA /* GMViewController.xib in Resources */,
 				45D866FB1A2DC3A0003345DA /* Images.xcassets in Resources */,
@@ -342,6 +351,7 @@
 				45D866E71A2DC3A0003345DA /* GMViewController.m in Sources */,
 				45D866F91A2DC3A0003345DA /* UIRefreshControl+AFNetworking.m in Sources */,
 				45D866FA1A2DC3A0003345DA /* UIWebView+AFNetworking.m in Sources */,
+				45D867041A2DCBF8003345DA /* GMMapViewController.m in Sources */,
 				45D866EB1A2DC3A0003345DA /* AFHTTPSessionManager.m in Sources */,
 				45D866F51A2DC3A0003345DA /* UIAlertView+AFNetworking.m in Sources */,
 				45D866EA1A2DC3A0003345DA /* AFHTTPRequestOperationManager.m in Sources */,

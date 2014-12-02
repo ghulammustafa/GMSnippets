@@ -7,21 +7,23 @@
 //
 
 #import <SystemConfiguration/CaptiveNetwork.h>
-#import "Reachability.h"
-
 #include <ifaddrs.h>
 #include <arpa/inet.h>
 
 #import "GMViewController.h"
-#import "AFNetworking.h"
+#import "GMMapViewController.h"
 
-typedef enum kBPAction {
-    kBPActionUploadVideo,
-    kBPActionWiFiSSID,
-    kBPActionCurrentIP,
-    kBPActionCarrierInformation,
-    kBPActionCount
-} kBPAction;
+#import "AFNetworking.h"
+#import "Reachability.h"
+
+typedef enum kGMAction {
+    kGMActionUploadVideo,
+    kGMActionWiFiSSID,
+    kGMActionCurrentIP,
+    kGMActionCarrierInformation,
+    kGMActionMapsPlayground,
+    kGMActionCount
+} kGMAction;
 
 #pragma mark -
 
@@ -53,7 +55,7 @@ typedef enum kBPAction {
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return kBPActionCount;
+    return kGMActionCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -71,23 +73,31 @@ typedef enum kBPAction {
 }
 
 - (void)configureCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    
     switch (indexPath.row) {
 
-        case kBPActionUploadVideo:
+        case kGMActionUploadVideo:
             cell.textLabel.text = @"Upload Video";
             break;
             
-        case kBPActionWiFiSSID:
+        case kGMActionWiFiSSID:
             cell.textLabel.text = @"WiFi SSID";
             break;
 
-        case kBPActionCurrentIP:
+        case kGMActionCurrentIP:
             cell.textLabel.text = @"Current IP";
             break;
 
-        case kBPActionCarrierInformation:
+        case kGMActionCarrierInformation:
             cell.textLabel.text = @"Carrier Information";
+            break;
+            
+        case kGMActionMapsPlayground:
+            cell.textLabel.text = @"Maps Playground";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
             break;
             
         default:
@@ -99,24 +109,28 @@ typedef enum kBPAction {
 #pragma mark UITableViewDelegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     switch (indexPath.row) {
             
-        case kBPActionUploadVideo:
+        case kGMActionUploadVideo:
             [self uploadVideo];
             break;
             
-        case kBPActionWiFiSSID:
+        case kGMActionWiFiSSID:
             [self showWiFiSSID];
             break;
 
-        case kBPActionCurrentIP:
+        case kGMActionCurrentIP:
             [self showIPAddress];
             break;
 
-        case kBPActionCarrierInformation:
+        case kGMActionCarrierInformation:
             [self showCarrierInfo];
 
+        case kGMActionMapsPlayground:
+            [self showMapViewController];
+            
         default:
             break;
     }
@@ -124,6 +138,12 @@ typedef enum kBPAction {
 
 #pragma mark -
 #pragma mark Action methods
+
+- (void)showMapViewController {
+    GMMapViewController *viewController = [[GMMapViewController alloc] initWithNibName:@"GMMapViewController" bundle:nil];
+    viewController.title = @"Maps Playground";
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 - (void)showCarrierInfo {
     // Check reachability
