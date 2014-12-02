@@ -1,4 +1,4 @@
 GMSnippets
 ==========
 
-A sample iOS application with code snippets
+A sample iOS application with code snippets.
