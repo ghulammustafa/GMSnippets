@@ -31,7 +31,8 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self getGeneralPurposeDirectionsInformation];
+    [self getRouteUsingMapQuest];
+    // [self getGeneralPurposeDirectionsInformation];
     // [self openMapsApplicationWithDirections];
     // [self getLocationsForAddresses];
     // [self getAddressesFromLocations];
@@ -45,6 +46,80 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
 }
 
 #pragma mark -
+
+- (NSString *)stringForCoordinate:(CLLocationCoordinate2D)locationCoordinate {
+    return [NSString stringWithFormat:@"%.8f, %.8f", locationCoordinate.latitude, locationCoordinate.longitude];
+}
+
+- (void)getRouteUsingMapQuest {
+    CLLocationCoordinate2D storeLocationCoordinate = CLLocationCoordinate2DMake(40.01469800, -74.78969499);
+    NSValue *storeLocationCoordinateValue = [NSValue valueWithMKCoordinate:storeLocationCoordinate];
+    
+    NSArray *locationCoordinates = @[storeLocationCoordinateValue,
+                                     [NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(41.35945318, -72.94651295)],
+                                     [NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(41.36346908, -72.93512004)],
+                                     [NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(41.35902000, -72.94537900)],
+                                     [NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(41.36294014, -72.93391982)],
+                                     [NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(41.35103500, -72.93191100)],
+                                     [NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(41.39091200, -72.92199700)],
+                                     [NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(41.36788196, -72.94184343)],
+                                     [NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(41.36496548, -72.92269087)],
+                                     [NSValue valueWithMKCoordinate:CLLocationCoordinate2DMake(41.36293200, -72.92756300)]];
+    
+    for (NSValue *locationCoordinateValue in locationCoordinates) {
+        CLLocationCoordinate2D locationCoordinate = [locationCoordinateValue MKCoordinateValue];
+
+        MKPointAnnotation *mapPointAnnotation = [[MKPointAnnotation alloc] init];
+        mapPointAnnotation.coordinate = locationCoordinate;
+        mapPointAnnotation.title = [self stringForCoordinate:locationCoordinate];
+        [self.mapView addAnnotation:mapPointAnnotation];
+    }
+
+    [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+
+    // Get directions!
+    NSString *jsonString = [self locationsJSONForCoordinates:locationCoordinates];
+    NSString *mapQuestOptimizeRouteURLString = [NSString stringWithFormat:@"http://www.mapquestapi.com/directions/v2/route?key=%@&outFormat=json&json=%@", kGMMapQuestKey, jsonString];
+    NSLog(@"Request URL: \n%@", mapQuestOptimizeRouteURLString);
+    
+    NSError *error = nil;
+    NSURL *mapQuestOptimizeRouteURL = [NSURL URLWithString:[mapQuestOptimizeRouteURLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSLog(@"Request URL: \n%@", mapQuestOptimizeRouteURL);
+    
+    NSString *response = [NSString stringWithContentsOfURL:mapQuestOptimizeRouteURL encoding:NSUTF8StringEncoding error:&error];
+    
+    if (error) {
+        NSLog(@"Error: \n%@", error);
+        
+    } else if (response != nil) {
+        NSLog(@"Response: \n%@", response);
+        
+        NSData *responseData = [response dataUsingEncoding:NSUTF8StringEncoding];
+        id jsonResponse = [NSJSONSerialization JSONObjectWithData:responseData
+                                                          options:NSJSONReadingAllowFragments
+                                                            error:&error];
+        
+        if (error) {
+            NSLog(@"Error: \n%@", error);
+            
+        } else if ([jsonResponse isKindOfClass:[NSDictionary class]]) {
+            NSDictionary *jsonDictionary = (NSDictionary *)jsonResponse;
+            NSNumber *infoStatusCode = [jsonDictionary valueForKeyPath:@"info.statuscode"];
+            
+        } else if ([jsonResponse isKindOfClass:[NSArray class]]) {
+            NSDictionary *userInfo = @{
+                                       NSLocalizedDescriptionKey:NSLocalizedString(@"Unrecognized response received from MapQuest.", nil),
+                                       NSLocalizedFailureReasonErrorKey:NSLocalizedString(@"Unrecognized response received from MapQuest.", nil),
+                                       NSLocalizedRecoverySuggestionErrorKey:NSLocalizedString(@"Unrecognized response received from MapQuest.", nil)
+                                       };
+            NSError *error = [NSError errorWithDomain:kGMMapErrorDomain
+                                                 code:-57
+                                             userInfo:userInfo];
+            
+            NSLog(@"Error: \n%@", error);
+        }
+    }
+}
 
 - (void)openMapsApplicationWithDirections {
     CLLocationCoordinate2D startLocationCoordinate = CLLocationCoordinate2DMake(37.331446,-122.030412);
@@ -313,6 +388,40 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
     }
     
     return locationSequence;
+}
+
+- (NSString *)jsonForDictionaryObject:(NSDictionary *)dictionaryObject {
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionaryObject options:0 error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    return jsonString;
+}
+
+- (NSString *)locationsJSONForCoordinates:(NSArray *)coordinates {
+    NSDictionary *locationsInfo = [self locationsDictionaryForCoordinates:coordinates];
+    NSString *locationsJSON = [self jsonForDictionaryObject:locationsInfo];
+    return locationsJSON;
+}
+
+- (NSDictionary *)locationsDictionaryForCoordinates:(NSArray *)coordinates {
+    NSMutableArray *locations = [NSMutableArray array];
+    
+    for (NSValue *locationCoordinateValue in coordinates) {
+        CLLocationCoordinate2D locationCoordinate = [locationCoordinateValue MKCoordinateValue];
+        NSDictionary *locationDictionary = [self locationDictionaryForCoordinate:locationCoordinate];
+        [locations addObject:locationDictionary];
+    }
+    
+    NSDictionary *locationsDictionary = [NSDictionary dictionaryWithObject:locations forKey:@"locations"];
+    return locationsDictionary;
+}
+
+- (NSDictionary *)locationDictionaryForCoordinate:(CLLocationCoordinate2D)locationCoordinate {
+    NSNumber *lat = [NSNumber numberWithDouble:locationCoordinate.latitude];
+    NSNumber *lng = [NSNumber numberWithDouble:locationCoordinate.longitude];
+    NSDictionary *latLngDictionary = [NSDictionary dictionaryWithObjectsAndKeys:lat, @"lat", lng, @"lng", nil];
+    NSDictionary *locationDictionary = [NSDictionary dictionaryWithObject:latLngDictionary forKey:@"latLng"];
+    return locationDictionary;
 }
 
 - (void)optimizeMapRoute {
