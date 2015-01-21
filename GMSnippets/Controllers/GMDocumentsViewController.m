@@ -12,6 +12,9 @@
 #import "TOWebViewController.h"
 #import "MBProgressHUD.h"
 
+#define kGMUIDocumentInteractionController NO
+#define kGMFileURLString @"http://partners.adobe.com/public/developer/en/xml/AdobeXMLFormsSamples.pdf"
+
 #pragma mark -
 
 @interface GMDocumentsViewController () <UIDocumentInteractionControllerDelegate> {
@@ -32,7 +35,7 @@
     [super viewDidLoad];
     
     // Do any additional setup after loading the view from its nib.
-    self.allowReadonlyAccess = NO;
+    self.allowReadonlyAccess = !kGMUIDocumentInteractionController;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,7 +48,7 @@
 #pragma mark Action methods
 
 - (IBAction)showDocument:(id)sender {
-    NSString *fileURLString = @"http://partners.adobe.com/public/developer/en/xml/AdobeXMLFormsSamples.pdf";
+    NSString *fileURLString = kGMFileURLString;
     [self downloadFile:fileURLString];
 }
 

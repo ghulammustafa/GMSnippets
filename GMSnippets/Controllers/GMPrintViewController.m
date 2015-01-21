@@ -8,7 +8,11 @@
 
 #import "GMPrintViewController.h"
 
-const NSString *webPageURLString = @"http://www.apple.com/startpage/index.html";
+#import "RMUniversalAlert.h"
+
+#define kGMWebPageURLString @"http://www.apple.com/startpage/index.html"
+
+#pragma mark -
 
 @interface GMPrintViewController () <UIPrintInteractionControllerDelegate>
 
@@ -18,20 +22,24 @@ const NSString *webPageURLString = @"http://www.apple.com/startpage/index.html";
 
 @end
 
+#pragma mark -
+
 @implementation GMPrintViewController
+
+#pragma mark -
+#pragma mark View lifecycle methods
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Do any additional setup after loading the view, typically from a nib.
-    UIBarButtonItem *printHTMLBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(printHTML:)];
-    self.navigationItem.rightBarButtonItem = printHTMLBarButton;
-    
-    //    UIBarButtonItem *printWebBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(printWebPage:)];
-    //    self.navigationItem.leftBarButtonItem = printWebBarButton;
+    // Add right bar button
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                                    target:self
+                                                                                    action:@selector(actionButtonTapped:)];
+    self.navigationItem.rightBarButtonItem = rightBarButton;
     
     // Load HTML
-    NSString *urlString = webPageURLString;
+    NSString *urlString = kGMWebPageURLString;
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:urlRequest];
@@ -39,14 +47,46 @@ const NSString *webPageURLString = @"http://www.apple.com/startpage/index.html";
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark -
 #pragma mark Action methods
 
+- (void)actionButtonTapped:(id)sender {
+    [RMUniversalAlert showActionSheetInViewController:self
+                                            withTitle:@"Action"
+                                              message:@"Choose the action you want the take."
+                                    cancelButtonTitle:@"Cancel"
+                               destructiveButtonTitle:nil
+                                    otherButtonTitles:@[@"Print RAW HTML", @"Print UIWebView"]
+                   popoverPresentationControllerBlock:nil
+                                             tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex) {
+                                                 
+                                                 if (buttonIndex == alert.cancelButtonIndex) {
+                                                     NSLog(@"Cancel button tapped");
+                                                     
+                                                 } else if (buttonIndex == alert.destructiveButtonIndex) {
+                                                     NSLog(@"Delete button tapped");
+                                                     
+                                                 } else if (buttonIndex >= alert.firstOtherButtonIndex) {
+                                                     NSInteger otherButtonIndex = (long)buttonIndex - alert.firstOtherButtonIndex;
+                                                     NSLog(@"Other Button Index %ld", otherButtonIndex);
+                                                     
+                                                     if (otherButtonIndex == 0) {
+                                                         [self printHTML:nil];
+                                                         
+                                                     } else if (otherButtonIndex == 1) {
+                                                         [self printWebPage:nil];
+                                                     }
+                                                 }
+                                             }];
+
+}
+
 - (void)printHTML:(id)sender {
-    NSString *urlString = webPageURLString;
+    NSString *urlString = kGMWebPageURLString;
     NSURL *url = [NSURL URLWithString:urlString];
     
     NSError *error = nil;
@@ -79,6 +119,7 @@ const NSString *webPageURLString = @"http://www.apple.com/startpage/index.html";
             NSLog(@"Printing could not complete because of error: %@", error);
         }
     };
+    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [pic presentFromBarButtonItem:sender animated:YES completionHandler:completionHandler];
     } else {
@@ -88,6 +129,7 @@ const NSString *webPageURLString = @"http://www.apple.com/startpage/index.html";
 
 - (void)printWebPage:(id)sender {
     UIPrintInteractionController *controller = [UIPrintInteractionController sharedPrintController];
+
     void (^completionHandler)(UIPrintInteractionController *, BOOL, NSError *) =
     ^(UIPrintInteractionController *printController, BOOL completed, NSError *error) {
         if(!completed && error){
@@ -110,9 +152,12 @@ const NSString *webPageURLString = @"http://www.apple.com/startpage/index.html";
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [controller presentFromBarButtonItem:self.navigationItem.leftBarButtonItem animated:YES completionHandler:completionHandler];
         
-    }else
+    } else {
         [controller presentAnimated:YES completionHandler:completionHandler];
+    }
 }
+
+#pragma mark -
 
 #pragma mark -
 #pragma mark UIWebViewDelegate methods

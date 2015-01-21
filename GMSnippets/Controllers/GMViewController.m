@@ -14,6 +14,7 @@
 #import "GMMapViewController.h"
 #import "GMPrintViewController.h"
 #import "GMDocumentsViewController.h"
+#import "GMBarcodeScannerViewController.h"
 
 #import "AFNetworking.h"
 #import "Reachability.h"
@@ -26,6 +27,7 @@ typedef enum kGMAction {
     kGMActionMapsPlayground,
     kGMActionPrintPlayground,
     kGMActionDocumentsPlayground,
+    kGMActionBarcodeScanning,
     kGMActionCount
 } kGMAction;
 
@@ -113,6 +115,11 @@ typedef enum kGMAction {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
             
+        case kGMActionBarcodeScanning:
+            cell.textLabel.text = @"Barcode Scanning";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            break;
+            
         default:
             cell.textLabel.text = @"N/A";
             break;
@@ -152,6 +159,12 @@ typedef enum kGMAction {
             
         case kGMActionDocumentsPlayground:
             [self showDocumentsViewController];
+            break;
+            
+        case kGMActionBarcodeScanning:
+            [self showBarcodeScanningViewController];
+            break;
+            
         default:
             break;
     }
@@ -159,6 +172,12 @@ typedef enum kGMAction {
 
 #pragma mark -
 #pragma mark Action methods
+
+- (void)showBarcodeScanningViewController {
+    GMBarcodeScannerViewController *viewController = [[GMBarcodeScannerViewController alloc] initWithNibName:@"GMBarcodeScannerViewController" bundle:nil];
+    viewController.title = @"Barcode Scanner";
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 - (void)showDocumentsViewController {
     GMDocumentsViewController *viewController = [[GMDocumentsViewController alloc] initWithNibName:@"GMDocumentsViewController" bundle:nil];
@@ -170,7 +189,6 @@ typedef enum kGMAction {
     GMPrintViewController *viewController = [[GMPrintViewController alloc] initWithNibName:@"GMPrintViewController" bundle:nil];
     viewController.title = @"Print Playground";
     [self.navigationController pushViewController:viewController animated:YES];
-    
 }
 
 - (void)showMapViewController {

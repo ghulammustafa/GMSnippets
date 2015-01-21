@@ -22,6 +22,7 @@
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     
+    // For reference
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *directoryPath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
     NSLog(@"Directory Path: %@", directoryPath);

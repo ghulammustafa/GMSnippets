@@ -11,9 +11,14 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-const NSInteger kGMMapQuestOptimizeLimit = 10;
-const NSString * kGMMapErrorDomain = @"com.mustafa.learning.map.errordomain";
-const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
+#import "RMUniversalAlert.h"
+
+#define kGMMapQuestOptimizeLimit    10
+#define kGMMapErrorDomain           @"com.mustafa.learning.map.errordomain"
+#define kGMMapQuestKey              @"<map_quest_api_key>"
+
+#define kGMMapQuestRouteURLString           @"http://www.mapquestapi.com/directions/v2/route?key=%@&outFormat=json&json=%@"
+#define kGMMapQuestRouteOptimizedURLString  @"http://www.mapquestapi.com/directions/v2/optimizedroute?key=%@&outFormat=json&json=%@"
 
 #pragma mark -
 
@@ -31,12 +36,11 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self getRouteUsingMapQuest];
-    // [self getGeneralPurposeDirectionsInformation];
-    // [self openMapsApplicationWithDirections];
-    // [self getLocationsForAddresses];
-    // [self getAddressesFromLocations];
-    // [self optimizeMapRoute];
+    // Add right bar button
+    UIBarButtonItem *rightBarButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                                    target:self
+                                                                                    action:@selector(actionButtonTapped:)];
+    self.navigationItem.rightBarButtonItem = rightBarButton;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,10 +50,61 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
 }
 
 #pragma mark -
+#pragma mark Action methods
 
-- (NSString *)stringForCoordinate:(CLLocationCoordinate2D)locationCoordinate {
-    return [NSString stringWithFormat:@"%.8f, %.8f", locationCoordinate.latitude, locationCoordinate.longitude];
+- (void)actionButtonTapped:(id)sender {
+    [RMUniversalAlert showActionSheetInViewController:self
+                                            withTitle:@"Action"
+                                              message:@"Choose the action you want the take."
+                                    cancelButtonTitle:@"Cancel"
+                               destructiveButtonTitle:nil
+                                    otherButtonTitles:@[@"Get Geo-location from Address",
+                                                        @"Get Address from Geo-location",
+                                                        @"Get Directions Information",
+                                                        @"Get Travel Time Information",
+                                                        @"Open Maps App for Directions",
+                                                        @"Get Route Using MapQuest",
+                                                        @"Get Optimized Route Using MapQuest"]
+                   popoverPresentationControllerBlock:nil
+                                             tapBlock:^(RMUniversalAlert *alert, NSInteger buttonIndex) {
+                                                 
+                                                 if (buttonIndex == alert.cancelButtonIndex) {
+                                                     NSLog(@"Cancel button tapped");
+                                                     
+                                                 } else if (buttonIndex == alert.destructiveButtonIndex) {
+                                                     NSLog(@"Delete button tapped");
+                                                     
+                                                 } else if (buttonIndex >= alert.firstOtherButtonIndex) {
+                                                     NSInteger otherButtonIndex = (long)buttonIndex - alert.firstOtherButtonIndex;
+                                                     NSLog(@"Other Button Index %ld", otherButtonIndex);
+                                                     
+                                                     if (otherButtonIndex == 0) {
+                                                         [self getLocationsForAddresses];
+                                                         
+                                                     } else if (otherButtonIndex == 1) {
+                                                         [self getAddressesFromLocations];
+                                                         
+                                                     } else if (otherButtonIndex == 2) {
+                                                         [self getGeneralPurposeDirectionsInformation];
+                                                         
+                                                     } else if (otherButtonIndex == 3) {
+                                                         [self getExpectedTravelTimeInformation];
+                                                         
+                                                     } else if (otherButtonIndex == 4) {
+                                                         [self openMapsApplicationWithDirections];
+                                                         
+                                                     } else if (otherButtonIndex == 5) {
+                                                         [self getRouteUsingMapQuest];
+                                                     
+                                                     } else if (otherButtonIndex == 6) {
+                                                         [self optimizeMapRoute];
+                                                         // [self routeOptimizationRaw];
+                                                     }
+                                                 }
+                                             }];
 }
+
+#pragma mark Wrapper methods
 
 - (void)getRouteUsingMapQuest {
     CLLocationCoordinate2D storeLocationCoordinate = CLLocationCoordinate2DMake(40.01469800, -74.78969499);
@@ -79,11 +134,11 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
 
     // Get directions!
     NSString *jsonString = [self locationsJSONForCoordinates:locationCoordinates];
-    NSString *mapQuestOptimizeRouteURLString = [NSString stringWithFormat:@"http://www.mapquestapi.com/directions/v2/route?key=%@&outFormat=json&json=%@", kGMMapQuestKey, jsonString];
-    NSLog(@"Request URL: \n%@", mapQuestOptimizeRouteURLString);
+    NSString *mapQuestRouteURLString = [NSString stringWithFormat:kGMMapQuestRouteURLString, kGMMapQuestKey, jsonString];
+    NSLog(@"Request URL: \n%@", mapQuestRouteURLString);
     
     NSError *error = nil;
-    NSURL *mapQuestOptimizeRouteURL = [NSURL URLWithString:[mapQuestOptimizeRouteURLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSURL *mapQuestOptimizeRouteURL = [NSURL URLWithString:[mapQuestRouteURLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSLog(@"Request URL: \n%@", mapQuestOptimizeRouteURL);
     
     NSString *response = [NSString stringWithContentsOfURL:mapQuestOptimizeRouteURL encoding:NSUTF8StringEncoding error:&error];
@@ -282,146 +337,15 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
             NSTimeInterval expectedTravelTime = response.expectedTravelTime;
             NSLog(@"Calculated ETA: %.2f", expectedTravelTime);
         }
+        
+        [RMUniversalAlert showAlertInViewController:self
+                                          withTitle:@"Result"
+                                            message:@"See Console for result."
+                                  cancelButtonTitle:@"OK"
+                             destructiveButtonTitle:nil
+                                  otherButtonTitles:nil
+                                           tapBlock:NULL];
     }];
-}
-
-- (void)showRoute:(MKDirectionsResponse *)response {
-    NSLog(@"%s", __FUNCTION__);
-    
-    for (MKRoute *route in response.routes) {
-        [self.mapView addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
-    }
-}
-
-- (NSArray *)locationSequenceForLocations:(NSArray *)locationsArray error:(NSError **)outError {
-    NSArray *locationSequence = nil;
-    
-    if ([locationsArray count] <= 2) {
-        NSMutableArray *routeLocationSequence = [NSMutableArray array];
-        
-        for (NSInteger index = 0; index < [locationsArray count]; index++) {
-            [routeLocationSequence addObject:[NSNumber numberWithInteger:index]];
-        }
-        
-        locationSequence = routeLocationSequence;
-        
-    } else {
-        NSDictionary *locationsDictionary = [NSDictionary dictionaryWithObject:locationsArray forKey:@"locations"];
-        
-        NSError *error = nil;
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:locationsDictionary options:0 error:&error];
-        NSString *jsonLocations = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        NSString *mapQuestOptimizeRouteURLString = [NSString stringWithFormat:@"http://www.mapquestapi.com/directions/v2/optimizedroute?key=%@&outFormat=json&json=%@", kGMMapQuestKey, jsonLocations];
-        NSLog(@"Request URL: \n%@", mapQuestOptimizeRouteURLString);
-        
-        NSURL *mapQuestOptimizeRouteURL = [NSURL URLWithString:[mapQuestOptimizeRouteURLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        NSString *response = [NSString stringWithContentsOfURL:mapQuestOptimizeRouteURL encoding:NSUTF8StringEncoding error:&error];
-        
-        if (error != nil) {
-            NSLog(@"Error: \n%@", error);
-            
-            if (outError != NULL) {
-                *outError = error;
-            }
-            
-        } else if (response != nil) {
-            NSLog(@"Response: \n%@", response);
-            
-            NSData *responseData = [response dataUsingEncoding:NSUTF8StringEncoding];
-            id jsonResponse = [NSJSONSerialization JSONObjectWithData:responseData
-                                                              options:NSJSONReadingAllowFragments
-                                                                error:&error];
-            
-            if (error) {
-                
-                if (outError != NULL) {
-                    *outError = error;
-                }
-                
-            } else if ([jsonResponse isKindOfClass:[NSDictionary class]]) {
-                NSDictionary *jsonDictionary = (NSDictionary *)jsonResponse;
-                NSNumber *infoStatusCode = [jsonDictionary valueForKeyPath:@"info.statuscode"];
-                NSArray *infoMessages = [jsonDictionary valueForKeyPath:@"info.messages"];
-                NSString *routeErrorCode = [jsonDictionary valueForKeyPath:@"route.routeError.errorCode"];
-                NSString *routeErrorMessage = [jsonDictionary valueForKeyPath:@"route.routeError.message"];
-                NSArray *routeLocationSequence = [jsonDictionary valueForKeyPath:@"route.locationSequence"];
-                NSString *infoMessage = nil;
-                
-                if ((infoMessages != nil) && ([infoMessages count] > 0)) {
-                    infoMessage = [infoMessages objectAtIndex:0];
-                }
-                
-                if ([infoStatusCode integerValue] == 0) {
-                    locationSequence = routeLocationSequence;
-                    
-                } else if (infoMessage != nil) {
-                    NSDictionary *userInfo = @{
-                                               NSLocalizedDescriptionKey:infoMessage,
-                                               NSLocalizedFailureReasonErrorKey:infoMessage,
-                                               NSLocalizedRecoverySuggestionErrorKey:infoMessage
-                                               };
-                    NSError *error = [NSError errorWithDomain:kGMMapErrorDomain
-                                                         code:-57
-                                                     userInfo:userInfo];
-                    
-                    if (outError != NULL) {
-                        *outError = error;
-                    }
-                }
-                
-            } else if ([jsonResponse isKindOfClass:[NSArray class]]) {
-                NSDictionary *userInfo = @{
-                                           NSLocalizedDescriptionKey:NSLocalizedString(@"Unrecognized response received from MapQuest.", nil),
-                                           NSLocalizedFailureReasonErrorKey:NSLocalizedString(@"Unrecognized response received from MapQuest.", nil),
-                                           NSLocalizedRecoverySuggestionErrorKey:NSLocalizedString(@"Unrecognized response received from MapQuest.", nil)
-                                           };
-                NSError *error = [NSError errorWithDomain:kGMMapErrorDomain
-                                                     code:-57
-                                                 userInfo:userInfo];
-                
-                if (outError != NULL) {
-                    *outError = error;
-                }
-            }
-        }
-        
-    }
-    
-    return locationSequence;
-}
-
-- (NSString *)jsonForDictionaryObject:(NSDictionary *)dictionaryObject {
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionaryObject options:0 error:&error];
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    return jsonString;
-}
-
-- (NSString *)locationsJSONForCoordinates:(NSArray *)coordinates {
-    NSDictionary *locationsInfo = [self locationsDictionaryForCoordinates:coordinates];
-    NSString *locationsJSON = [self jsonForDictionaryObject:locationsInfo];
-    return locationsJSON;
-}
-
-- (NSDictionary *)locationsDictionaryForCoordinates:(NSArray *)coordinates {
-    NSMutableArray *locations = [NSMutableArray array];
-    
-    for (NSValue *locationCoordinateValue in coordinates) {
-        CLLocationCoordinate2D locationCoordinate = [locationCoordinateValue MKCoordinateValue];
-        NSDictionary *locationDictionary = [self locationDictionaryForCoordinate:locationCoordinate];
-        [locations addObject:locationDictionary];
-    }
-    
-    NSDictionary *locationsDictionary = [NSDictionary dictionaryWithObject:locations forKey:@"locations"];
-    return locationsDictionary;
-}
-
-- (NSDictionary *)locationDictionaryForCoordinate:(CLLocationCoordinate2D)locationCoordinate {
-    NSNumber *lat = [NSNumber numberWithDouble:locationCoordinate.latitude];
-    NSNumber *lng = [NSNumber numberWithDouble:locationCoordinate.longitude];
-    NSDictionary *latLngDictionary = [NSDictionary dictionaryWithObjectsAndKeys:lat, @"lat", lng, @"lng", nil];
-    NSDictionary *locationDictionary = [NSDictionary dictionaryWithObject:latLngDictionary forKey:@"latLng"];
-    return locationDictionary;
 }
 
 - (void)optimizeMapRoute {
@@ -550,6 +474,13 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
         
         // Perform UI operation in the main queue
         dispatch_async(dispatch_get_main_queue(), ^{
+            [RMUniversalAlert showAlertInViewController:self
+                                              withTitle:@"Result"
+                                                message:@"See Console for result."
+                                      cancelButtonTitle:@"OK"
+                                 destructiveButtonTitle:nil
+                                      otherButtonTitles:nil
+                                               tapBlock:NULL];
         });
     });
 }
@@ -583,7 +514,7 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
     NSString *jsonLocations = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
     
     NSString *mapQuestKey = [NSString stringWithString:kGMMapQuestKey];
-    NSString *mapQuestOptimizeRouteURLString = [NSString stringWithFormat:@"http://www.mapquestapi.com/directions/v2/optimizedroute?key=%@&outFormat=json&json=%@", mapQuestKey, jsonLocations];
+    NSString *mapQuestOptimizeRouteURLString = [NSString stringWithFormat:kGMMapQuestRouteOptimizedURLString, mapQuestKey, jsonLocations];
     NSLog(@"Request URL: \n%@", mapQuestOptimizeRouteURLString);
     
     NSURL *mapQuestOptimizeRouteURL = [NSURL URLWithString:[mapQuestOptimizeRouteURLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
@@ -618,6 +549,14 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
     
     // http://www.mapquestapi.com/directions/v2/optimizedroute?key=<map_quest_api_key>&callback=renderMatrixResults&outFormat=xml&json={%22locations%22:%20[{%22latLng%22:%20{%22lat%22:%2041.36346908,%22lng%22:%20-72.93512004}},{%22latLng%22:%20{%22lat%22:%2041.36383161,%22lng%22:%20-72.93596993}},{%22latLng%22:%20{%22lat%22:%2041.35945318,%22lng%22:%20-72.94651295}}],%22options%22:%20{%22routeType%22:%20%22shortest%22}}
     // http://open.mapquestapi.com/directions/v2/optimizedroute?key=<map_quest_api_key>&callback=%20renderMatrixResults&outFormat=xml&json={locations:[{%20latLng:%20{%20lat:%2048.2300676,%20lng:%2011.6828566}%20},{%20latLng:%20{%20lat:%2048.447097202066,%20lng:%2011.7404350694809}%20},{%20latLng:%20{%20lat:%2048.1212485,%20lng:%2011.5190721}%20},{%20latLng:%20{%20lat:%2049.45385,%20lng:%2011.07732}%20},{%20latLng:%20{%20lat:%2048.2300676,%20lng:%2011.6828566}%20}]}
+
+    [RMUniversalAlert showAlertInViewController:self
+                                      withTitle:@"Result"
+                                        message:@"See Console for result."
+                              cancelButtonTitle:@"OK"
+                         destructiveButtonTitle:nil
+                              otherButtonTitles:nil
+                                       tapBlock:NULL];
 }
 
 - (void)getAddressesFromLocations {
@@ -663,6 +602,14 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
                            }
                        }];
     }
+    
+    [RMUniversalAlert showAlertInViewController:self
+                                      withTitle:@"Result"
+                                        message:@"See Console for result."
+                              cancelButtonTitle:@"OK"
+                         destructiveButtonTitle:nil
+                              otherButtonTitles:nil
+                                       tapBlock:NULL];
 }
 
 - (void)getLocationsForAddresses {
@@ -721,6 +668,186 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
                          }
                      }];
     }
+    
+    [RMUniversalAlert showAlertInViewController:self
+                                      withTitle:@"Result"
+                                        message:@"See Console for result."
+                              cancelButtonTitle:@"OK"
+                         destructiveButtonTitle:nil
+                              otherButtonTitles:nil
+                                       tapBlock:NULL];
+}
+
+#pragma mark -
+#pragma mark Private methods
+
+- (NSString *)stringForCoordinate:(CLLocationCoordinate2D)locationCoordinate {
+    return [NSString stringWithFormat:@"%.8f, %.8f", locationCoordinate.latitude, locationCoordinate.longitude];
+}
+
+- (void)showRoute:(MKDirectionsResponse *)response {
+    NSLog(@"%s", __FUNCTION__);
+    
+    for (MKRoute *route in response.routes) {
+        [self.mapView addOverlay:route.polyline level:MKOverlayLevelAboveRoads];
+    }
+}
+
+- (NSArray *)locationSequenceForLocations:(NSArray *)locationsArray error:(NSError **)outError {
+    NSArray *locationSequence = nil;
+    
+    if ([locationsArray count] <= 2) {
+        NSMutableArray *routeLocationSequence = [NSMutableArray array];
+        
+        for (NSInteger index = 0; index < [locationsArray count]; index++) {
+            [routeLocationSequence addObject:[NSNumber numberWithInteger:index]];
+        }
+        
+        locationSequence = routeLocationSequence;
+        
+    } else {
+        NSDictionary *locationsDictionary = [NSDictionary dictionaryWithObject:locationsArray forKey:@"locations"];
+        
+        NSError *error = nil;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:locationsDictionary options:0 error:&error];
+        NSString *jsonLocations = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        NSString *mapQuestOptimizeRouteURLString = [NSString stringWithFormat:kGMMapQuestRouteOptimizedURLString, kGMMapQuestKey, jsonLocations];
+        NSLog(@"Request URL: \n%@", mapQuestOptimizeRouteURLString);
+        
+        NSURL *mapQuestOptimizeRouteURL = [NSURL URLWithString:[mapQuestOptimizeRouteURLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSString *response = [NSString stringWithContentsOfURL:mapQuestOptimizeRouteURL encoding:NSUTF8StringEncoding error:&error];
+        
+        if (error != nil) {
+            NSLog(@"Error: \n%@", error);
+            
+            if (outError != NULL) {
+                *outError = error;
+            }
+            
+        } else if (response != nil) {
+            NSLog(@"Response: \n%@", response);
+            
+            NSData *responseData = [response dataUsingEncoding:NSUTF8StringEncoding];
+            id jsonResponse = [NSJSONSerialization JSONObjectWithData:responseData
+                                                              options:NSJSONReadingAllowFragments
+                                                                error:&error];
+            
+            if (error) {
+                
+                if (outError != NULL) {
+                    *outError = error;
+                }
+                
+            } else if ([jsonResponse isKindOfClass:[NSDictionary class]]) {
+                NSDictionary *jsonDictionary = (NSDictionary *)jsonResponse;
+                NSNumber *infoStatusCode = [jsonDictionary valueForKeyPath:@"info.statuscode"];
+                NSArray *infoMessages = [jsonDictionary valueForKeyPath:@"info.messages"];
+                NSString *routeErrorCode = [jsonDictionary valueForKeyPath:@"route.routeError.errorCode"];
+                NSString *routeErrorMessage = [jsonDictionary valueForKeyPath:@"route.routeError.message"];
+                NSArray *routeLocationSequence = [jsonDictionary valueForKeyPath:@"route.locationSequence"];
+                NSString *infoMessage = nil;
+                
+                if ((infoMessages != nil) && ([infoMessages count] > 0)) {
+                    infoMessage = [infoMessages objectAtIndex:0];
+                }
+                
+                if ([infoStatusCode integerValue] == 0) {
+                    locationSequence = routeLocationSequence;
+                    
+                } else if (infoMessage != nil) {
+                    NSDictionary *userInfo = @{
+                                               NSLocalizedDescriptionKey:infoMessage,
+                                               NSLocalizedFailureReasonErrorKey:infoMessage,
+                                               NSLocalizedRecoverySuggestionErrorKey:infoMessage
+                                               };
+                    NSError *error = [NSError errorWithDomain:kGMMapErrorDomain
+                                                         code:-57
+                                                     userInfo:userInfo];
+                    
+                    if (outError != NULL) {
+                        *outError = error;
+                    }
+                }
+                
+            } else if ([jsonResponse isKindOfClass:[NSArray class]]) {
+                NSDictionary *userInfo = @{
+                                           NSLocalizedDescriptionKey:NSLocalizedString(@"Unrecognized response received from MapQuest.", nil),
+                                           NSLocalizedFailureReasonErrorKey:NSLocalizedString(@"Unrecognized response received from MapQuest.", nil),
+                                           NSLocalizedRecoverySuggestionErrorKey:NSLocalizedString(@"Unrecognized response received from MapQuest.", nil)
+                                           };
+                NSError *error = [NSError errorWithDomain:kGMMapErrorDomain
+                                                     code:-57
+                                                 userInfo:userInfo];
+                
+                if (outError != NULL) {
+                    *outError = error;
+                }
+            }
+        }
+        
+    }
+    
+    return locationSequence;
+}
+
+- (NSString *)jsonForDictionaryObject:(NSDictionary *)dictionaryObject {
+    NSError *error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dictionaryObject options:0 error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    return jsonString;
+}
+
+- (NSString *)locationsJSONForCoordinates:(NSArray *)coordinates {
+    NSDictionary *locationsInfo = [self locationsDictionaryForCoordinates:coordinates];
+    NSString *locationsJSON = [self jsonForDictionaryObject:locationsInfo];
+    return locationsJSON;
+}
+
+- (NSDictionary *)locationsDictionaryForCoordinates:(NSArray *)coordinates {
+    NSMutableArray *locations = [NSMutableArray array];
+    
+    for (NSValue *locationCoordinateValue in coordinates) {
+        CLLocationCoordinate2D locationCoordinate = [locationCoordinateValue MKCoordinateValue];
+        NSDictionary *locationDictionary = [self locationDictionaryForCoordinate:locationCoordinate];
+        [locations addObject:locationDictionary];
+    }
+    
+    NSDictionary *locationsDictionary = [NSDictionary dictionaryWithObject:locations forKey:@"locations"];
+    return locationsDictionary;
+}
+
+- (NSDictionary *)locationDictionaryForCoordinate:(CLLocationCoordinate2D)locationCoordinate {
+    NSNumber *lat = [NSNumber numberWithDouble:locationCoordinate.latitude];
+    NSNumber *lng = [NSNumber numberWithDouble:locationCoordinate.longitude];
+    NSDictionary *latLngDictionary = [NSDictionary dictionaryWithObjectsAndKeys:lat, @"lat", lng, @"lng", nil];
+    NSDictionary *locationDictionary = [NSDictionary dictionaryWithObject:latLngDictionary forKey:@"latLng"];
+    return locationDictionary;
+}
+
+- (NSString *)transportTypeString:(MKDirectionsTransportType)transportType {
+    NSString *routeTransportTypeString = nil;
+    
+    switch (transportType) {
+        case MKDirectionsTransportTypeAutomobile:
+            routeTransportTypeString = @"Automobile";
+            break;
+        case MKDirectionsTransportTypeWalking:
+            routeTransportTypeString = @"Walking";
+            break;
+        case MKDirectionsTransportTypeAny:
+            routeTransportTypeString = @"Any";
+            break;
+        default:
+            break;
+    }
+    
+    return routeTransportTypeString;
+}
+
+- (MKMapItem *)mapItemForLocationCoordinate:(CLLocationCoordinate2D)coordinate {
+    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
+    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+    return mapItem;
 }
 
 #pragma mark -
@@ -768,35 +895,6 @@ const NSString * kGMMapQuestKey = @"<map_quest_api_key>";
     }
     
     return nil;
-}
-
-
-#pragma mark -
-
-- (NSString *)transportTypeString:(MKDirectionsTransportType)transportType {
-    NSString *routeTransportTypeString = nil;
-    
-    switch (transportType) {
-        case MKDirectionsTransportTypeAutomobile:
-            routeTransportTypeString = @"Automobile";
-            break;
-        case MKDirectionsTransportTypeWalking:
-            routeTransportTypeString = @"Walking";
-            break;
-        case MKDirectionsTransportTypeAny:
-            routeTransportTypeString = @"Any";
-            break;
-        default:
-            break;
-    }
-    
-    return routeTransportTypeString;
-}
-
-- (MKMapItem *)mapItemForLocationCoordinate:(CLLocationCoordinate2D)coordinate {
-    MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:nil];
-    MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
-    return mapItem;
 }
 
 @end
