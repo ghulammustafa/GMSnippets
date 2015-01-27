@@ -20,7 +20,7 @@ The following functionality is included in this sample:
 - Print web/html content
 - Download and open documents using UIDocumentInteractionController or UIWebView
 - Scan barcodes, and identify the code and type of the scanned barcode
-
+- BNRXIB inspired subclass for UICollectionViewCell
 
 BUILD REQUIREMENTS
 ------------------------------
@@ -34,6 +34,10 @@ iOS 7.0 or later
 
 THIRD PARTY TOOLS/ LIBRARIES/ FRAMEWORKS
 ------------------------------
+
+BNRXIBCell (Last updated Apr 22, 2013)
+A UITableViewCell subclass, intended to be subclassed, to forward action messages from cell subviews to a controller.
+https://github.com/bignerdranch/BNRXIBCell
 
 RMUniversalAlert (Last updated Jan 10, 2015)
 Wrapper class for UIAlertView / UIActionSheet / UIAlertController for targeting all iOS versions.

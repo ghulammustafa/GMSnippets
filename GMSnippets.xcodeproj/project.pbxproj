@@ -56,6 +56,8 @@
 		45D867291A2DD7C3003345DA /* TOWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D867211A2DD7C3003345DA /* TOWebViewController.m */; };
 		45D8672A1A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D867231A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.m */; };
 		45D8672E1A2DD896003345DA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D8672D1A2DD896003345DA /* MBProgressHUD.m */; };
+		45E37B211A775F16009D470E /* BNRXIBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E37B201A775F16009D470E /* BNRXIBCell.m */; };
+		45E37B251A775F4B009D470E /* GMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E37B241A775F4B009D470E /* GMCollectionViewCell.m */; };
 		45FD1397198A08E700C5EA8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1396198A08E700C5EA8C /* Foundation.framework */; };
 		45FD1399198A08E700C5EA8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1398198A08E700C5EA8C /* CoreGraphics.framework */; };
 		45FD139B198A08E700C5EA8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD139A198A08E700C5EA8C /* UIKit.framework */; };
@@ -158,6 +160,10 @@
 		45D867251A2DD7C3003345DA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/TOWebViewControllerLocalizable.strings"; sourceTree = "<group>"; };
 		45D8672C1A2DD896003345DA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		45D8672D1A2DD896003345DA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		45E37B1F1A775F16009D470E /* BNRXIBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRXIBCell.h; sourceTree = "<group>"; };
+		45E37B201A775F16009D470E /* BNRXIBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRXIBCell.m; sourceTree = "<group>"; };
+		45E37B231A775F4B009D470E /* GMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCollectionViewCell.h; sourceTree = "<group>"; };
+		45E37B241A775F4B009D470E /* GMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCollectionViewCell.m; sourceTree = "<group>"; };
 		45FD1393198A08E700C5EA8C /* GMSnippets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMSnippets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FD1396198A08E700C5EA8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45FD1398198A08E700C5EA8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -277,6 +283,8 @@
 		45D866B31A2DC3A0003345DA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				45E37B221A775F33009D470E /* GMCollectionViewCell */,
+				45E37B1E1A775F16009D470E /* BNRXIBCell */,
 				4530F16E1A6F8A670057DBC6 /* RMUniversalAlert */,
 				4530F1691A6F7ABF0057DBC6 /* Scanners */,
 				45D8672B1A2DD896003345DA /* MBProgressHUD */,
@@ -391,6 +399,24 @@
 				45D8672D1A2DD896003345DA /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		45E37B1E1A775F16009D470E /* BNRXIBCell */ = {
+			isa = PBXGroup;
+			children = (
+				45E37B1F1A775F16009D470E /* BNRXIBCell.h */,
+				45E37B201A775F16009D470E /* BNRXIBCell.m */,
+			);
+			path = BNRXIBCell;
+			sourceTree = "<group>";
+		};
+		45E37B221A775F33009D470E /* GMCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				45E37B231A775F4B009D470E /* GMCollectionViewCell.h */,
+				45E37B241A775F4B009D470E /* GMCollectionViewCell.m */,
+			);
+			path = GMCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		45FD138A198A08E700C5EA8C = {
@@ -509,6 +535,7 @@
 				45D866EF1A2DC3A0003345DA /* AFURLRequestSerialization.m in Sources */,
 				45D866F71A2DC3A0003345DA /* UIImageView+AFNetworking.m in Sources */,
 				45D866EE1A2DC3A0003345DA /* AFURLConnectionOperation.m in Sources */,
+				45E37B211A775F16009D470E /* BNRXIBCell.m in Sources */,
 				45D867271A2DD7C3003345DA /* TOActivityChrome.m in Sources */,
 				45D866ED1A2DC3A0003345DA /* AFSecurityPolicy.m in Sources */,
 				4530F1751A6F8AD20057DBC6 /* UIAlertView+Blocks.m in Sources */,
@@ -529,6 +556,7 @@
 				45D867091A2DD313003345DA /* GMPrintViewController.m in Sources */,
 				45D866F51A2DC3A0003345DA /* UIAlertView+AFNetworking.m in Sources */,
 				4530F16C1A6F7ABF0057DBC6 /* MTBBarcodeScanner.m in Sources */,
+				45E37B251A775F4B009D470E /* GMCollectionViewCell.m in Sources */,
 				45D866EA1A2DC3A0003345DA /* AFHTTPRequestOperationManager.m in Sources */,
 				45D867281A2DD7C3003345DA /* TOActivitySafari.m in Sources */,
 				45D866F31A2DC3A0003345DA /* AFNetworkActivityIndicatorManager.m in Sources */,
