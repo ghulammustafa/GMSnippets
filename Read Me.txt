@@ -21,6 +21,8 @@ The following functionality is included in this sample:
 - Download and open documents using UIDocumentInteractionController or UIWebView
 - Scan barcodes, and identify the code and type of the scanned barcode
 - BNRXIB inspired subclass for UICollectionViewCell
+- Setup launch images (for iOS 7 and below), and launch screen xib (for iOS 8 and above)
+
 
 BUILD REQUIREMENTS
 ------------------------------
@@ -67,11 +69,28 @@ Application Icon Template (Version 4.1, Last updated December 2014)
 This template includes quick rendering of every single iOS 5,6, 7 and 8 sizes along with bundled textures, colors and gradients. Automatically rendered previews of your app icon in the app store and on the homescreen and easy export actions utilizing new and improved bicubic scaling for a smoother output.
 http://appicontemplate.com/ios8
 
+
 HELP/ REFERENCES
 ------------------------------
 
 Launch Images
 https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LaunchImages.html
+
+
+TIPS & TRICKS
+------------------------------
+
+The easy way to dismiss the keyboard in iOS
+Published by Josh Brown on January 26, 2015
+(h/t http://roadfiresoftware.com/2015/01/the-easy-way-to-dismiss-the-ios-keyboard/)
+
+If you want to dismiss the iOS keyboard programmatically in your app without worrying about which view is the first responder, try the following:
+
+In Swift:
+UIApplication.sharedApplication().sendAction("resignFirstResponder", to:nil, from:nil, forEvent:nil)
+
+In Objective-C:
+[[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
 
 
 Copyright (c) 2014 Mustafa. All rights reserved.

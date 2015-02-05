@@ -15,6 +15,7 @@
 		4530F1791A6F8AF90057DBC6 /* UIActionSheet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4530F1781A6F8AF90057DBC6 /* UIActionSheet+Blocks.m */; };
 		4530F17D1A6F8B150057DBC6 /* UIAlertController+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 4530F17C1A6F8B150057DBC6 /* UIAlertController+Blocks.m */; };
 		4530F1801A6F8B720057DBC6 /* RMPopoverPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4530F17F1A6F8B720057DBC6 /* RMPopoverPresentationController.m */; };
+		4538A3811A839C6D00CB7FE8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4538A3801A839C6D00CB7FE8 /* LaunchScreen.xib */; };
 		459A414B198F5B7000644F86 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A414A198F5B7000644F86 /* CoreTelephony.framework */; };
 		45D866E61A2DC3A0003345DA /* GMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D866AE1A2DC3A0003345DA /* GMAppDelegate.m */; };
 		45D866E71A2DC3A0003345DA /* GMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D866B11A2DC3A0003345DA /* GMViewController.m */; };
@@ -80,6 +81,7 @@
 		4530F17C1A6F8B150057DBC6 /* UIAlertController+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Blocks.m"; sourceTree = "<group>"; };
 		4530F17E1A6F8B720057DBC6 /* RMPopoverPresentationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMPopoverPresentationController.h; sourceTree = "<group>"; };
 		4530F17F1A6F8B720057DBC6 /* RMPopoverPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPopoverPresentationController.m; sourceTree = "<group>"; };
+		4538A3801A839C6D00CB7FE8 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		459A414A198F5B7000644F86 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		45D866AD1A2DC3A0003345DA /* GMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAppDelegate.h; sourceTree = "<group>"; };
 		45D866AE1A2DC3A0003345DA /* GMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMAppDelegate.m; sourceTree = "<group>"; };
@@ -237,11 +239,28 @@
 			path = "UIAlertController+Blocks";
 			sourceTree = "<group>";
 		};
+		4538A37E1A839C2500CB7FE8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4538A37F1A839C2500CB7FE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4538A3801A839C6D00CB7FE8 /* LaunchScreen.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		45D866AB1A2DC3A0003345DA /* GMSnippets */ = {
 			isa = PBXGroup;
 			children = (
 				45D866AC1A2DC3A0003345DA /* AppDelegate */,
 				45D866AF1A2DC3A0003345DA /* Controllers */,
+				4538A37E1A839C2500CB7FE8 /* Models */,
+				4538A37F1A839C2500CB7FE8 /* Views */,
 				45D866B31A2DC3A0003345DA /* Helpers */,
 				45D866DD1A2DC3A0003345DA /* Resources */,
 				45D866E11A2DC3A0003345DA /* Supporting Files */,
@@ -519,6 +538,7 @@
 				45D866FF1A2DC3A0003345DA /* InfoPlist.strings in Resources */,
 				45D866E81A2DC3A0003345DA /* GMViewController.xib in Resources */,
 				45D866FB1A2DC3A0003345DA /* Images.xcassets in Resources */,
+				4538A3811A839C6D00CB7FE8 /* LaunchScreen.xib in Resources */,
 				45D866FC1A2DC3A0003345DA /* Sample.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
