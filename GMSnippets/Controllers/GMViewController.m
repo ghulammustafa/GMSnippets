@@ -15,6 +15,7 @@
 #import "GMPrintViewController.h"
 #import "GMDocumentsViewController.h"
 #import "GMBarcodeScannerViewController.h"
+#import "GMCrasherViewController.h"
 
 #import "AFNetworking.h"
 #import "Reachability.h"
@@ -28,6 +29,7 @@ typedef enum kGMAction {
     kGMActionPrintPlayground,
     kGMActionDocumentsPlayground,
     kGMActionBarcodeScanning,
+    kGMActionCrasher,
     kGMActionCount
 } kGMAction;
 
@@ -120,6 +122,11 @@ typedef enum kGMAction {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
             
+        case kGMActionCrasher:
+            cell.textLabel.text = @"Crash Reporting";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            break;
+            
         default:
             cell.textLabel.text = @"N/A";
             break;
@@ -165,6 +172,9 @@ typedef enum kGMAction {
             [self showBarcodeScanningViewController];
             break;
             
+        case kGMActionCrasher:
+            [self showCrasherViewController];
+            break;
         default:
             break;
     }
@@ -172,6 +182,12 @@ typedef enum kGMAction {
 
 #pragma mark -
 #pragma mark Action methods
+
+- (void)showCrasherViewController {
+    GMCrasherViewController *viewController = [[GMCrasherViewController alloc] initWithNibName:@"GMCrasherViewController" bundle:nil];
+    viewController.title = @"Crasher";
+    [self.navigationController pushViewController:viewController animated:YES];
+}
 
 - (void)showBarcodeScanningViewController {
     GMBarcodeScannerViewController *viewController = [[GMBarcodeScannerViewController alloc] initWithNibName:@"GMBarcodeScannerViewController" bundle:nil];

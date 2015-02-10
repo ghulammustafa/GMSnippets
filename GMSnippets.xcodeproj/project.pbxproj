@@ -17,6 +17,17 @@
 		4530F1801A6F8B720057DBC6 /* RMPopoverPresentationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4530F17F1A6F8B720057DBC6 /* RMPopoverPresentationController.m */; };
 		4538A3811A839C6D00CB7FE8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4538A3801A839C6D00CB7FE8 /* LaunchScreen.xib */; };
 		459A414B198F5B7000644F86 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459A414A198F5B7000644F86 /* CoreTelephony.framework */; };
+		45C96BFF1A89D8E0000CD4A7 /* GMCrasherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C96BFE1A89D8E0000CD4A7 /* GMCrasherViewController.m */; };
+		45C96C011A89D8F1000CD4A7 /* GMCrasherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45C96C001A89D8F1000CD4A7 /* GMCrasherViewController.xib */; };
+		45C96C041A89D9F1000CD4A7 /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C96C031A89D9F1000CD4A7 /* CrashReporter.framework */; };
+		45C96C121A89E70D000CD4A7 /* SuperLogger.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45C96C071A89E70D000CD4A7 /* SuperLogger.bundle */; };
+		45C96C131A89E70D000CD4A7 /* SLLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45C96C081A89E70D000CD4A7 /* SLLocalizable.strings */; };
+		45C96C141A89E70D000CD4A7 /* SuperLogerListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C96C0B1A89E70D000CD4A7 /* SuperLogerListView.m */; };
+		45C96C151A89E70D000CD4A7 /* SuperLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C96C0D1A89E70D000CD4A7 /* SuperLogger.m */; };
+		45C96C161A89E70D000CD4A7 /* SuperLoggerFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C96C0F1A89E70D000CD4A7 /* SuperLoggerFunctions.m */; };
+		45C96C171A89E70D000CD4A7 /* SuperLoggerPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C96C111A89E70D000CD4A7 /* SuperLoggerPreviewView.m */; };
+		45C96C191A89E8A0000CD4A7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45C96C181A89E8A0000CD4A7 /* MessageUI.framework */; };
+		45C96C1B1A89EDCE000CD4A7 /* CrashReporter-Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = 45C96C1A1A89EDCE000CD4A7 /* CrashReporter-Readme.txt */; };
 		45D866E61A2DC3A0003345DA /* GMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D866AE1A2DC3A0003345DA /* GMAppDelegate.m */; };
 		45D866E71A2DC3A0003345DA /* GMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D866B11A2DC3A0003345DA /* GMViewController.m */; };
 		45D866E81A2DC3A0003345DA /* GMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D866B21A2DC3A0003345DA /* GMViewController.xib */; };
@@ -83,6 +94,22 @@
 		4530F17F1A6F8B720057DBC6 /* RMPopoverPresentationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMPopoverPresentationController.m; sourceTree = "<group>"; };
 		4538A3801A839C6D00CB7FE8 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		459A414A198F5B7000644F86 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		45C96BFD1A89D8E0000CD4A7 /* GMCrasherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCrasherViewController.h; sourceTree = "<group>"; };
+		45C96BFE1A89D8E0000CD4A7 /* GMCrasherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCrasherViewController.m; sourceTree = "<group>"; };
+		45C96C001A89D8F1000CD4A7 /* GMCrasherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMCrasherViewController.xib; sourceTree = "<group>"; };
+		45C96C031A89D9F1000CD4A7 /* CrashReporter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CrashReporter.framework; sourceTree = "<group>"; };
+		45C96C071A89E70D000CD4A7 /* SuperLogger.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SuperLogger.bundle; sourceTree = "<group>"; };
+		45C96C091A89E70D000CD4A7 /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/SLLocalizable.strings"; sourceTree = "<group>"; };
+		45C96C0A1A89E70D000CD4A7 /* SuperLogerListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperLogerListView.h; sourceTree = "<group>"; };
+		45C96C0B1A89E70D000CD4A7 /* SuperLogerListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperLogerListView.m; sourceTree = "<group>"; };
+		45C96C0C1A89E70D000CD4A7 /* SuperLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperLogger.h; sourceTree = "<group>"; };
+		45C96C0D1A89E70D000CD4A7 /* SuperLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperLogger.m; sourceTree = "<group>"; };
+		45C96C0E1A89E70D000CD4A7 /* SuperLoggerFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperLoggerFunctions.h; sourceTree = "<group>"; };
+		45C96C0F1A89E70D000CD4A7 /* SuperLoggerFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerFunctions.m; sourceTree = "<group>"; };
+		45C96C101A89E70D000CD4A7 /* SuperLoggerPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperLoggerPreviewView.h; sourceTree = "<group>"; };
+		45C96C111A89E70D000CD4A7 /* SuperLoggerPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperLoggerPreviewView.m; sourceTree = "<group>"; };
+		45C96C181A89E8A0000CD4A7 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		45C96C1A1A89EDCE000CD4A7 /* CrashReporter-Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "CrashReporter-Readme.txt"; sourceTree = "<group>"; };
 		45D866AD1A2DC3A0003345DA /* GMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAppDelegate.h; sourceTree = "<group>"; };
 		45D866AE1A2DC3A0003345DA /* GMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMAppDelegate.m; sourceTree = "<group>"; };
 		45D866B01A2DC3A0003345DA /* GMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMViewController.h; sourceTree = "<group>"; };
@@ -177,6 +204,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C96C191A89E8A0000CD4A7 /* MessageUI.framework in Frameworks */,
+				45C96C041A89D9F1000CD4A7 /* CrashReporter.framework in Frameworks */,
 				45D8670E1A2DD5F7003345DA /* CoreLocation.framework in Frameworks */,
 				45D8670C1A2DD5F2003345DA /* MapKit.framework in Frameworks */,
 				459A414B198F5B7000644F86 /* CoreTelephony.framework in Frameworks */,
@@ -254,6 +283,40 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		45C96C021A89D9F1000CD4A7 /* PLCrashReporter */ = {
+			isa = PBXGroup;
+			children = (
+				45C96C1A1A89EDCE000CD4A7 /* CrashReporter-Readme.txt */,
+				45C96C031A89D9F1000CD4A7 /* CrashReporter.framework */,
+			);
+			path = PLCrashReporter;
+			sourceTree = "<group>";
+		};
+		45C96C051A89E70D000CD4A7 /* SuperLogger */ = {
+			isa = PBXGroup;
+			children = (
+				45C96C061A89E70D000CD4A7 /* Resources */,
+				45C96C0A1A89E70D000CD4A7 /* SuperLogerListView.h */,
+				45C96C0B1A89E70D000CD4A7 /* SuperLogerListView.m */,
+				45C96C0C1A89E70D000CD4A7 /* SuperLogger.h */,
+				45C96C0D1A89E70D000CD4A7 /* SuperLogger.m */,
+				45C96C0E1A89E70D000CD4A7 /* SuperLoggerFunctions.h */,
+				45C96C0F1A89E70D000CD4A7 /* SuperLoggerFunctions.m */,
+				45C96C101A89E70D000CD4A7 /* SuperLoggerPreviewView.h */,
+				45C96C111A89E70D000CD4A7 /* SuperLoggerPreviewView.m */,
+			);
+			path = SuperLogger;
+			sourceTree = "<group>";
+		};
+		45C96C061A89E70D000CD4A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45C96C071A89E70D000CD4A7 /* SuperLogger.bundle */,
+				45C96C081A89E70D000CD4A7 /* SLLocalizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		45D866AB1A2DC3A0003345DA /* GMSnippets */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +358,9 @@
 				4530F1641A6F7A800057DBC6 /* GMBarcodeScannerViewController.h */,
 				4530F1651A6F7A800057DBC6 /* GMBarcodeScannerViewController.m */,
 				4530F1661A6F7A800057DBC6 /* GMBarcodeScannerViewController.xib */,
+				45C96BFD1A89D8E0000CD4A7 /* GMCrasherViewController.h */,
+				45C96BFE1A89D8E0000CD4A7 /* GMCrasherViewController.m */,
+				45C96C001A89D8F1000CD4A7 /* GMCrasherViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -302,6 +368,8 @@
 		45D866B31A2DC3A0003345DA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				45C96C051A89E70D000CD4A7 /* SuperLogger */,
+				45C96C021A89D9F1000CD4A7 /* PLCrashReporter */,
 				45E37B221A775F33009D470E /* GMCollectionViewCell */,
 				45E37B1E1A775F16009D470E /* BNRXIBCell */,
 				4530F16E1A6F8A670057DBC6 /* RMUniversalAlert */,
@@ -459,6 +527,7 @@
 		45FD1395198A08E700C5EA8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45C96C181A89E8A0000CD4A7 /* MessageUI.framework */,
 				45D8670D1A2DD5F7003345DA /* CoreLocation.framework */,
 				45D8670B1A2DD5F2003345DA /* MapKit.framework */,
 				459A414A198F5B7000644F86 /* CoreTelephony.framework */,
@@ -513,6 +582,7 @@
 				pl,
 				"zh-Hans",
 				"zh-Hant",
+				"zh-CN",
 			);
 			mainGroup = 45FD138A198A08E700C5EA8C;
 			productRefGroup = 45FD1394198A08E700C5EA8C /* Products */;
@@ -533,9 +603,13 @@
 				45D866FD1A2DC3A0003345DA /* Sample.mov in Resources */,
 				45D8670A1A2DD313003345DA /* GMPrintViewController.xib in Resources */,
 				45D867051A2DCBF8003345DA /* GMMapViewController.xib in Resources */,
+				45C96C131A89E70D000CD4A7 /* SLLocalizable.strings in Resources */,
+				45C96C1B1A89EDCE000CD4A7 /* CrashReporter-Readme.txt in Resources */,
 				45D867261A2DD7C3003345DA /* TOWebViewControllerLocalizable.strings in Resources */,
 				45D867131A2DD626003345DA /* GMDocumentsViewController.xib in Resources */,
+				45C96C121A89E70D000CD4A7 /* SuperLogger.bundle in Resources */,
 				45D866FF1A2DC3A0003345DA /* InfoPlist.strings in Resources */,
+				45C96C011A89D8F1000CD4A7 /* GMCrasherViewController.xib in Resources */,
 				45D866E81A2DC3A0003345DA /* GMViewController.xib in Resources */,
 				45D866FB1A2DC3A0003345DA /* Images.xcassets in Resources */,
 				4538A3811A839C6D00CB7FE8 /* LaunchScreen.xib in Resources */,
@@ -556,14 +630,17 @@
 				45D866F71A2DC3A0003345DA /* UIImageView+AFNetworking.m in Sources */,
 				45D866EE1A2DC3A0003345DA /* AFURLConnectionOperation.m in Sources */,
 				45E37B211A775F16009D470E /* BNRXIBCell.m in Sources */,
+				45C96C141A89E70D000CD4A7 /* SuperLogerListView.m in Sources */,
 				45D867271A2DD7C3003345DA /* TOActivityChrome.m in Sources */,
 				45D866ED1A2DC3A0003345DA /* AFSecurityPolicy.m in Sources */,
 				4530F1751A6F8AD20057DBC6 /* UIAlertView+Blocks.m in Sources */,
 				45D866F81A2DC3A0003345DA /* UIProgressView+AFNetworking.m in Sources */,
 				45D866E91A2DC3A0003345DA /* AFHTTPRequestOperation.m in Sources */,
 				4530F1801A6F8B720057DBC6 /* RMPopoverPresentationController.m in Sources */,
+				45C96C161A89E70D000CD4A7 /* SuperLoggerFunctions.m in Sources */,
 				45D866F11A2DC3A0003345DA /* AFURLSessionManager.m in Sources */,
 				45D8672E1A2DD896003345DA /* MBProgressHUD.m in Sources */,
+				45C96C171A89E70D000CD4A7 /* SuperLoggerPreviewView.m in Sources */,
 				45D866F01A2DC3A0003345DA /* AFURLResponseSerialization.m in Sources */,
 				45D866F61A2DC3A0003345DA /* UIButton+AFNetworking.m in Sources */,
 				45D866F41A2DC3A0003345DA /* UIActivityIndicatorView+AFNetworking.m in Sources */,
@@ -576,6 +653,7 @@
 				45D867091A2DD313003345DA /* GMPrintViewController.m in Sources */,
 				45D866F51A2DC3A0003345DA /* UIAlertView+AFNetworking.m in Sources */,
 				4530F16C1A6F7ABF0057DBC6 /* MTBBarcodeScanner.m in Sources */,
+				45C96BFF1A89D8E0000CD4A7 /* GMCrasherViewController.m in Sources */,
 				45E37B251A775F4B009D470E /* GMCollectionViewCell.m in Sources */,
 				45D866EA1A2DC3A0003345DA /* AFHTTPRequestOperationManager.m in Sources */,
 				45D867281A2DD7C3003345DA /* TOActivitySafari.m in Sources */,
@@ -583,6 +661,7 @@
 				45D867291A2DD7C3003345DA /* TOWebViewController.m in Sources */,
 				45D867121A2DD626003345DA /* GMDocumentsViewController.m in Sources */,
 				45D866EC1A2DC3A0003345DA /* AFNetworkReachabilityManager.m in Sources */,
+				45C96C151A89E70D000CD4A7 /* SuperLogger.m in Sources */,
 				45D866F21A2DC3A0003345DA /* Reachability.m in Sources */,
 				45D8672A1A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				4530F1711A6F8A670057DBC6 /* RMUniversalAlert.m in Sources */,
@@ -594,6 +673,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		45C96C081A89E70D000CD4A7 /* SLLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45C96C091A89E70D000CD4A7 /* zh-CN */,
+			);
+			name = SLLocalizable.strings;
+			sourceTree = "<group>";
+		};
 		45D867151A2DD7C3003345DA /* TOWebViewControllerLocalizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -687,6 +774,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GMSnippets/Helpers/PLCrashReporter",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMSnippets/Supporting Files/GMSnippets-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/GMSnippets/Supporting Files/GMSnippets-Info.plist";
@@ -701,6 +792,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GMSnippets/Helpers/PLCrashReporter",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMSnippets/Supporting Files/GMSnippets-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/GMSnippets/Supporting Files/GMSnippets-Info.plist";

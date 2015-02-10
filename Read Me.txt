@@ -22,6 +22,7 @@ The following functionality is included in this sample:
 - Scan barcodes, and identify the code and type of the scanned barcode
 - BNRXIB inspired subclass for UICollectionViewCell
 - Setup launch images (for iOS 7 and below), and launch screen xib (for iOS 8 and above)
+- Tryout PLCrashReporter and SuperLogger logging and crash reporter frameworks
 
 
 BUILD REQUIREMENTS
@@ -36,6 +37,15 @@ iOS 7.0 or later
 
 THIRD PARTY TOOLS/ LIBRARIES/ FRAMEWORKS
 ------------------------------
+
+SuperLogger (Last updated Feb 6, 2014)
+Save NSLog() to file and send email to developer (Note: It doesn't work in iOS Simulator)
+https://github.com/yourtion/SuperLogger
+
+PLCrashReporter (Version 1.2)
+Reliable, open-source crash reporting for iOS and Mac OS X.
+Plausible CrashReporter provides an in-process crash reporting framework for use on both iOS and Mac OS X, and powers most of the crash reporting services available for iOS, including HockeyApp, Flurry, and Crittercism.
+https://www.plcrashreporter.org
 
 BNRXIBCell (Last updated Apr 22, 2013)
 A UITableViewCell subclass, intended to be subclassed, to forward action messages from cell subviews to a controller.
