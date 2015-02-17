@@ -9,6 +9,9 @@
 #import "GMAppDelegate.h"
 #import "GMViewController.h"
 
+#import "UIViewController+Utility.h"
+
+#pragma mark -
 
 @implementation GMAppDelegate
 
@@ -16,13 +19,13 @@
     GMViewController *viewController = [[GMViewController alloc] initWithNibName:@"GMViewController" bundle:nil];
     viewController.title = @"Operations";
     
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.navigationController = [[GMNavigationViewController alloc] initWithRootViewController:viewController];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     
-    // For reference
+    // For reference (only)
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *directoryPath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
     NSLog(@"Directory Path: %@", directoryPath);
@@ -55,6 +58,34 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+@end
+
+#pragma mark -
+
+@implementation GMAppDelegate (Rotation)
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    NSUInteger orientations = UIInterfaceOrientationMaskAllButUpsideDown;
+
+    if (self.window.rootViewController) {
+        id presentedViewController = [UIViewController topViewControllerForRootViewController:self.window.rootViewController];
+
+        if (presentedViewController) {
+            orientations = [presentedViewController supportedInterfaceOrientations];
+        }
+        
+//        if ([presentedViewController respondsToSelector:@selector(shouldDisableAutorotate)]) {
+//            BOOL disableAutorotation = [presentedViewController shouldDisableAutorotate];
+//            
+//            if (disableAutorotation) {
+//                orientations = [presentedViewController supportedInterfaceOrientations];
+//            }
+//        }
+    }
+
+    return orientations;
 }
 
 @end

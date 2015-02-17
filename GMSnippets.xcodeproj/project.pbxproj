@@ -68,6 +68,20 @@
 		45D867291A2DD7C3003345DA /* TOWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D867211A2DD7C3003345DA /* TOWebViewController.m */; };
 		45D8672A1A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D867231A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.m */; };
 		45D8672E1A2DD896003345DA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D8672D1A2DD896003345DA /* MBProgressHUD.m */; };
+		45D9C1751A91AF2A004A8824 /* GMCompassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C1731A91AF2A004A8824 /* GMCompassViewController.m */; };
+		45D9C1761A91AF2A004A8824 /* GMCompassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D9C1741A91AF2A004A8824 /* GMCompassViewController.xib */; };
+		45D9C1791A91CA76004A8824 /* GMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C1781A91CA76004A8824 /* GMNavigationViewController.m */; };
+		45D9C17D1A91D19F004A8824 /* UIViewController+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C17C1A91D19F004A8824 /* UIViewController+Utility.m */; };
+		45D9C1961A91D767004A8824 /* CLHeading+Formatted.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C1811A91D767004A8824 /* CLHeading+Formatted.m */; };
+		45D9C1971A91D767004A8824 /* CLLocation+Bearing.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C1831A91D767004A8824 /* CLLocation+Bearing.m */; };
+		45D9C1981A91D767004A8824 /* CLLocation+DecimalDegreesConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C1851A91D767004A8824 /* CLLocation+DecimalDegreesConversion.m */; };
+		45D9C1991A91D767004A8824 /* CLLocation+Degrees.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C1871A91D767004A8824 /* CLLocation+Degrees.m */; };
+		45D9C19A1A91D767004A8824 /* CLLocation+Direction.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C1891A91D767004A8824 /* CLLocation+Direction.m */; };
+		45D9C19B1A91D767004A8824 /* CLLocation+Distance.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C18B1A91D767004A8824 /* CLLocation+Distance.m */; };
+		45D9C19C1A91D767004A8824 /* CLLocation+EXIFGPS.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C18D1A91D767004A8824 /* CLLocation+EXIFGPS.m */; };
+		45D9C19D1A91D767004A8824 /* CLLocation+UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C18F1A91D767004A8824 /* CLLocation+UserInfo.m */; };
+		45D9C19E1A91D767004A8824 /* CLPlacemark+UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C1911A91D767004A8824 /* CLPlacemark+UserInfo.m */; };
+		45D9C1A01A91D767004A8824 /* LLLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9C1951A91D767004A8824 /* LLLocationManager.m */; };
 		45E37B211A775F16009D470E /* BNRXIBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E37B201A775F16009D470E /* BNRXIBCell.m */; };
 		45E37B251A775F4B009D470E /* GMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E37B241A775F4B009D470E /* GMCollectionViewCell.m */; };
 		45FD1397198A08E700C5EA8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FD1396198A08E700C5EA8C /* Foundation.framework */; };
@@ -189,6 +203,35 @@
 		45D867251A2DD7C3003345DA /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/TOWebViewControllerLocalizable.strings"; sourceTree = "<group>"; };
 		45D8672C1A2DD896003345DA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		45D8672D1A2DD896003345DA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		45D9C1721A91AF2A004A8824 /* GMCompassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCompassViewController.h; sourceTree = "<group>"; };
+		45D9C1731A91AF2A004A8824 /* GMCompassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCompassViewController.m; sourceTree = "<group>"; };
+		45D9C1741A91AF2A004A8824 /* GMCompassViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GMCompassViewController.xib; sourceTree = "<group>"; };
+		45D9C1771A91CA76004A8824 /* GMNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMNavigationViewController.h; sourceTree = "<group>"; };
+		45D9C1781A91CA76004A8824 /* GMNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMNavigationViewController.m; sourceTree = "<group>"; };
+		45D9C17B1A91D19F004A8824 /* UIViewController+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Utility.h"; sourceTree = "<group>"; };
+		45D9C17C1A91D19F004A8824 /* UIViewController+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Utility.m"; sourceTree = "<group>"; };
+		45D9C17F1A91D767004A8824 /* CLDegreesAndRadians.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLDegreesAndRadians.h; sourceTree = "<group>"; };
+		45D9C1801A91D767004A8824 /* CLHeading+Formatted.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLHeading+Formatted.h"; sourceTree = "<group>"; };
+		45D9C1811A91D767004A8824 /* CLHeading+Formatted.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLHeading+Formatted.m"; sourceTree = "<group>"; };
+		45D9C1821A91D767004A8824 /* CLLocation+Bearing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+Bearing.h"; sourceTree = "<group>"; };
+		45D9C1831A91D767004A8824 /* CLLocation+Bearing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+Bearing.m"; sourceTree = "<group>"; };
+		45D9C1841A91D767004A8824 /* CLLocation+DecimalDegreesConversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+DecimalDegreesConversion.h"; sourceTree = "<group>"; };
+		45D9C1851A91D767004A8824 /* CLLocation+DecimalDegreesConversion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+DecimalDegreesConversion.m"; sourceTree = "<group>"; };
+		45D9C1861A91D767004A8824 /* CLLocation+Degrees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+Degrees.h"; sourceTree = "<group>"; };
+		45D9C1871A91D767004A8824 /* CLLocation+Degrees.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+Degrees.m"; sourceTree = "<group>"; };
+		45D9C1881A91D767004A8824 /* CLLocation+Direction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+Direction.h"; sourceTree = "<group>"; };
+		45D9C1891A91D767004A8824 /* CLLocation+Direction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+Direction.m"; sourceTree = "<group>"; };
+		45D9C18A1A91D767004A8824 /* CLLocation+Distance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+Distance.h"; sourceTree = "<group>"; };
+		45D9C18B1A91D767004A8824 /* CLLocation+Distance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+Distance.m"; sourceTree = "<group>"; };
+		45D9C18C1A91D767004A8824 /* CLLocation+EXIFGPS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+EXIFGPS.h"; sourceTree = "<group>"; };
+		45D9C18D1A91D767004A8824 /* CLLocation+EXIFGPS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+EXIFGPS.m"; sourceTree = "<group>"; };
+		45D9C18E1A91D767004A8824 /* CLLocation+UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+UserInfo.h"; sourceTree = "<group>"; };
+		45D9C18F1A91D767004A8824 /* CLLocation+UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+UserInfo.m"; sourceTree = "<group>"; };
+		45D9C1901A91D767004A8824 /* CLPlacemark+UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLPlacemark+UserInfo.h"; sourceTree = "<group>"; };
+		45D9C1911A91D767004A8824 /* CLPlacemark+UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLPlacemark+UserInfo.m"; sourceTree = "<group>"; };
+		45D9C1941A91D767004A8824 /* LLLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LLLocationManager.h; sourceTree = "<group>"; };
+		45D9C1951A91D767004A8824 /* LLLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LLLocationManager.m; sourceTree = "<group>"; };
+		45D9C1A11A91D86D004A8824 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		45E37B1F1A775F16009D470E /* BNRXIBCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRXIBCell.h; sourceTree = "<group>"; };
 		45E37B201A775F16009D470E /* BNRXIBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRXIBCell.m; sourceTree = "<group>"; };
 		45E37B231A775F4B009D470E /* GMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCollectionViewCell.h; sourceTree = "<group>"; };
@@ -324,6 +367,7 @@
 				45D866AF1A2DC3A0003345DA /* Controllers */,
 				4538A37E1A839C2500CB7FE8 /* Models */,
 				4538A37F1A839C2500CB7FE8 /* Views */,
+				45D9C17A1A91D175004A8824 /* Categories */,
 				45D866B31A2DC3A0003345DA /* Helpers */,
 				45D866DD1A2DC3A0003345DA /* Resources */,
 				45D866E11A2DC3A0003345DA /* Supporting Files */,
@@ -361,6 +405,11 @@
 				45C96BFD1A89D8E0000CD4A7 /* GMCrasherViewController.h */,
 				45C96BFE1A89D8E0000CD4A7 /* GMCrasherViewController.m */,
 				45C96C001A89D8F1000CD4A7 /* GMCrasherViewController.xib */,
+				45D9C1721A91AF2A004A8824 /* GMCompassViewController.h */,
+				45D9C1731A91AF2A004A8824 /* GMCompassViewController.m */,
+				45D9C1741A91AF2A004A8824 /* GMCompassViewController.xib */,
+				45D9C1771A91CA76004A8824 /* GMNavigationViewController.h */,
+				45D9C1781A91CA76004A8824 /* GMNavigationViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -368,6 +417,7 @@
 		45D866B31A2DC3A0003345DA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				45D9C17E1A91D767004A8824 /* CLLocationUtilities */,
 				45C96C051A89E70D000CD4A7 /* SuperLogger */,
 				45C96C021A89D9F1000CD4A7 /* PLCrashReporter */,
 				45E37B221A775F33009D470E /* GMCollectionViewCell */,
@@ -488,6 +538,43 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		45D9C17A1A91D175004A8824 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				45D9C17B1A91D19F004A8824 /* UIViewController+Utility.h */,
+				45D9C17C1A91D19F004A8824 /* UIViewController+Utility.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		45D9C17E1A91D767004A8824 /* CLLocationUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				45D9C17F1A91D767004A8824 /* CLDegreesAndRadians.h */,
+				45D9C1801A91D767004A8824 /* CLHeading+Formatted.h */,
+				45D9C1811A91D767004A8824 /* CLHeading+Formatted.m */,
+				45D9C1821A91D767004A8824 /* CLLocation+Bearing.h */,
+				45D9C1831A91D767004A8824 /* CLLocation+Bearing.m */,
+				45D9C1841A91D767004A8824 /* CLLocation+DecimalDegreesConversion.h */,
+				45D9C1851A91D767004A8824 /* CLLocation+DecimalDegreesConversion.m */,
+				45D9C1861A91D767004A8824 /* CLLocation+Degrees.h */,
+				45D9C1871A91D767004A8824 /* CLLocation+Degrees.m */,
+				45D9C1881A91D767004A8824 /* CLLocation+Direction.h */,
+				45D9C1891A91D767004A8824 /* CLLocation+Direction.m */,
+				45D9C18A1A91D767004A8824 /* CLLocation+Distance.h */,
+				45D9C18B1A91D767004A8824 /* CLLocation+Distance.m */,
+				45D9C18C1A91D767004A8824 /* CLLocation+EXIFGPS.h */,
+				45D9C18D1A91D767004A8824 /* CLLocation+EXIFGPS.m */,
+				45D9C18E1A91D767004A8824 /* CLLocation+UserInfo.h */,
+				45D9C18F1A91D767004A8824 /* CLLocation+UserInfo.m */,
+				45D9C1901A91D767004A8824 /* CLPlacemark+UserInfo.h */,
+				45D9C1911A91D767004A8824 /* CLPlacemark+UserInfo.m */,
+				45D9C1941A91D767004A8824 /* LLLocationManager.h */,
+				45D9C1951A91D767004A8824 /* LLLocationManager.m */,
+			);
+			path = CLLocationUtilities;
+			sourceTree = "<group>";
+		};
 		45E37B1E1A775F16009D470E /* BNRXIBCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +614,7 @@
 		45FD1395198A08E700C5EA8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45D9C1A11A91D86D004A8824 /* SenTestingKit.framework */,
 				45C96C181A89E8A0000CD4A7 /* MessageUI.framework */,
 				45D8670D1A2DD5F7003345DA /* CoreLocation.framework */,
 				45D8670B1A2DD5F2003345DA /* MapKit.framework */,
@@ -604,6 +692,7 @@
 				45D8670A1A2DD313003345DA /* GMPrintViewController.xib in Resources */,
 				45D867051A2DCBF8003345DA /* GMMapViewController.xib in Resources */,
 				45C96C131A89E70D000CD4A7 /* SLLocalizable.strings in Resources */,
+				45D9C1761A91AF2A004A8824 /* GMCompassViewController.xib in Resources */,
 				45C96C1B1A89EDCE000CD4A7 /* CrashReporter-Readme.txt in Resources */,
 				45D867261A2DD7C3003345DA /* TOWebViewControllerLocalizable.strings in Resources */,
 				45D867131A2DD626003345DA /* GMDocumentsViewController.xib in Resources */,
@@ -633,9 +722,11 @@
 				45C96C141A89E70D000CD4A7 /* SuperLogerListView.m in Sources */,
 				45D867271A2DD7C3003345DA /* TOActivityChrome.m in Sources */,
 				45D866ED1A2DC3A0003345DA /* AFSecurityPolicy.m in Sources */,
+				45D9C1751A91AF2A004A8824 /* GMCompassViewController.m in Sources */,
 				4530F1751A6F8AD20057DBC6 /* UIAlertView+Blocks.m in Sources */,
 				45D866F81A2DC3A0003345DA /* UIProgressView+AFNetworking.m in Sources */,
 				45D866E91A2DC3A0003345DA /* AFHTTPRequestOperation.m in Sources */,
+				45D9C17D1A91D19F004A8824 /* UIViewController+Utility.m in Sources */,
 				4530F1801A6F8B720057DBC6 /* RMPopoverPresentationController.m in Sources */,
 				45C96C161A89E70D000CD4A7 /* SuperLoggerFunctions.m in Sources */,
 				45D866F11A2DC3A0003345DA /* AFURLSessionManager.m in Sources */,
@@ -643,30 +734,41 @@
 				45C96C171A89E70D000CD4A7 /* SuperLoggerPreviewView.m in Sources */,
 				45D866F01A2DC3A0003345DA /* AFURLResponseSerialization.m in Sources */,
 				45D866F61A2DC3A0003345DA /* UIButton+AFNetworking.m in Sources */,
+				45D9C1791A91CA76004A8824 /* GMNavigationViewController.m in Sources */,
 				45D866F41A2DC3A0003345DA /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				45D9C1A01A91D767004A8824 /* LLLocationManager.m in Sources */,
 				45D866E71A2DC3A0003345DA /* GMViewController.m in Sources */,
 				45D866F91A2DC3A0003345DA /* UIRefreshControl+AFNetworking.m in Sources */,
 				45D866FA1A2DC3A0003345DA /* UIWebView+AFNetworking.m in Sources */,
+				45D9C19B1A91D767004A8824 /* CLLocation+Distance.m in Sources */,
+				45D9C1971A91D767004A8824 /* CLLocation+Bearing.m in Sources */,
 				45D867041A2DCBF8003345DA /* GMMapViewController.m in Sources */,
 				45D866EB1A2DC3A0003345DA /* AFHTTPSessionManager.m in Sources */,
 				4530F1791A6F8AF90057DBC6 /* UIActionSheet+Blocks.m in Sources */,
 				45D867091A2DD313003345DA /* GMPrintViewController.m in Sources */,
+				45D9C1961A91D767004A8824 /* CLHeading+Formatted.m in Sources */,
 				45D866F51A2DC3A0003345DA /* UIAlertView+AFNetworking.m in Sources */,
 				4530F16C1A6F7ABF0057DBC6 /* MTBBarcodeScanner.m in Sources */,
 				45C96BFF1A89D8E0000CD4A7 /* GMCrasherViewController.m in Sources */,
 				45E37B251A775F4B009D470E /* GMCollectionViewCell.m in Sources */,
 				45D866EA1A2DC3A0003345DA /* AFHTTPRequestOperationManager.m in Sources */,
+				45D9C1981A91D767004A8824 /* CLLocation+DecimalDegreesConversion.m in Sources */,
+				45D9C19C1A91D767004A8824 /* CLLocation+EXIFGPS.m in Sources */,
 				45D867281A2DD7C3003345DA /* TOActivitySafari.m in Sources */,
 				45D866F31A2DC3A0003345DA /* AFNetworkActivityIndicatorManager.m in Sources */,
 				45D867291A2DD7C3003345DA /* TOWebViewController.m in Sources */,
+				45D9C19A1A91D767004A8824 /* CLLocation+Direction.m in Sources */,
 				45D867121A2DD626003345DA /* GMDocumentsViewController.m in Sources */,
 				45D866EC1A2DC3A0003345DA /* AFNetworkReachabilityManager.m in Sources */,
+				45D9C1991A91D767004A8824 /* CLLocation+Degrees.m in Sources */,
 				45C96C151A89E70D000CD4A7 /* SuperLogger.m in Sources */,
 				45D866F21A2DC3A0003345DA /* Reachability.m in Sources */,
 				45D8672A1A2DD7C3003345DA /* UIImage+TOWebViewControllerIcons.m in Sources */,
 				4530F1711A6F8A670057DBC6 /* RMUniversalAlert.m in Sources */,
 				45D867001A2DC3A0003345DA /* main.m in Sources */,
+				45D9C19D1A91D767004A8824 /* CLLocation+UserInfo.m in Sources */,
 				45D866E61A2DC3A0003345DA /* GMAppDelegate.m in Sources */,
+				45D9C19E1A91D767004A8824 /* CLPlacemark+UserInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -777,6 +879,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GMSnippets/Helpers/PLCrashReporter",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMSnippets/Supporting Files/GMSnippets-Prefix.pch";
@@ -795,6 +898,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/GMSnippets/Helpers/PLCrashReporter",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GMSnippets/Supporting Files/GMSnippets-Prefix.pch";

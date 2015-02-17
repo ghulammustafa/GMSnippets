@@ -36,5 +36,9 @@
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
+	<key>NSLocationUsageDescription</key>
+	<string>The application would like to use your current location.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The application would like to use your current location.</string>
 </dict>
 </plist>

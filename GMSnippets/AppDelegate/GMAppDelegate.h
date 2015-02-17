@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GMNavigationViewController.h"
 
 @interface GMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) UINavigationController *navigationController;
+@property (strong, nonatomic) GMNavigationViewController *navigationController;
 
 @end
