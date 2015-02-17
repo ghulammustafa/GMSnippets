@@ -301,7 +301,7 @@
 
     double radiansBearing = atan2(sin(lon2 - lon1) * cos(lat2), cos(lat1) * sin(lat2) - sin(lat1) * cos(lat2) * cos(lon2 - lon1));
     double degreesBearing = RadiansToDegrees(radiansBearing);
-    degreesBearing = (int)round(degreesBearing + 360.0) % 360;
+    degreesBearing = (int)round(degreesBearing + 360.0) % 360; // Note: These calculation shenanigans are required because apparently we're getting the values between -180 and +180 (instead of between 0 and 360)
 
     return degreesBearing;
 }
