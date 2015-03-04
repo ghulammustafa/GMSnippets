@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GMStringsViewController">
+            <connections>
+                <outlet property="inputLabel" destination="bJ1-d8-vgm" id="1Am-pd-0Bn"/>
+                <outlet property="inputTextView" destination="NNb-0x-uS6" id="v5a-ah-3qu"/>
+                <outlet property="outputLabel" destination="8Kl-Ja-XkV" id="dnE-jt-EX3"/>
+                <outlet property="outputTextView" destination="Pie-DK-UzJ" id="RCa-Iy-Ebs"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pYg-Od-gRH">
+                    <rect key="frame" x="0.0" y="64" width="600" height="268"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJ1-d8-vgm">
+                            <rect key="frame" x="8" y="8" width="584" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="0Cj-tR-bjy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNb-0x-uS6">
+                            <rect key="frame" x="8" y="37" width="584" height="223"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="bJ1-d8-vgm" firstAttribute="leading" secondItem="NNb-0x-uS6" secondAttribute="leading" id="0do-qU-ZZK"/>
+                        <constraint firstItem="NNb-0x-uS6" firstAttribute="leading" secondItem="pYg-Od-gRH" secondAttribute="leadingMargin" id="22D-Dv-4zg"/>
+                        <constraint firstItem="NNb-0x-uS6" firstAttribute="bottom" secondItem="pYg-Od-gRH" secondAttribute="bottomMargin" id="3dF-fc-1Gl"/>
+                        <constraint firstItem="bJ1-d8-vgm" firstAttribute="top" secondItem="pYg-Od-gRH" secondAttribute="topMargin" id="QFh-L8-vyt"/>
+                        <constraint firstItem="NNb-0x-uS6" firstAttribute="trailing" secondItem="pYg-Od-gRH" secondAttribute="trailingMargin" id="QI0-KO-WpK"/>
+                        <constraint firstItem="NNb-0x-uS6" firstAttribute="trailing" secondItem="bJ1-d8-vgm" secondAttribute="trailing" id="Rkk-6W-8JT"/>
+                        <constraint firstItem="NNb-0x-uS6" firstAttribute="top" secondItem="bJ1-d8-vgm" secondAttribute="bottom" constant="8" symbolic="YES" id="xX9-Uj-zS4"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9fI-2B-CfE">
+                    <rect key="frame" x="0.0" y="332" width="600" height="268"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kl-Ja-XkV">
+                            <rect key="frame" x="8" y="8" width="584" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="WLR-UE-Q0q"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="N/A" translatesAutoresizingMaskIntoConstraints="NO" id="Pie-DK-UzJ">
+                            <rect key="frame" x="8" y="37" width="584" height="223"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="223" id="rC7-R1-RJI"/>
+                            </constraints>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Pie-DK-UzJ" firstAttribute="trailing" secondItem="9fI-2B-CfE" secondAttribute="trailingMargin" id="8gg-W8-LIG"/>
+                        <constraint firstItem="Pie-DK-UzJ" firstAttribute="bottom" secondItem="9fI-2B-CfE" secondAttribute="bottomMargin" id="9Ld-Mc-pGI"/>
+                        <constraint firstItem="8Kl-Ja-XkV" firstAttribute="leading" secondItem="Pie-DK-UzJ" secondAttribute="leading" id="Vj4-7z-SDf"/>
+                        <constraint firstItem="8Kl-Ja-XkV" firstAttribute="top" secondItem="9fI-2B-CfE" secondAttribute="topMargin" id="WDt-Eo-Ymc"/>
+                        <constraint firstItem="Pie-DK-UzJ" firstAttribute="leading" secondItem="9fI-2B-CfE" secondAttribute="leadingMargin" id="fxc-f1-3Id"/>
+                        <constraint firstItem="Pie-DK-UzJ" firstAttribute="trailing" secondItem="8Kl-Ja-XkV" secondAttribute="trailing" id="jC7-1N-7uF"/>
+                        <constraint firstItem="Pie-DK-UzJ" firstAttribute="top" secondItem="8Kl-Ja-XkV" secondAttribute="bottom" constant="8" symbolic="YES" id="zPK-Tq-WnM"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="pYg-Od-gRH" firstAttribute="width" secondItem="9fI-2B-CfE" secondAttribute="width" id="8KB-3o-AgV"/>
+                <constraint firstAttribute="trailing" secondItem="pYg-Od-gRH" secondAttribute="trailing" id="Lwd-Ng-RGe"/>
+                <constraint firstItem="pYg-Od-gRH" firstAttribute="height" secondItem="9fI-2B-CfE" secondAttribute="height" id="PqV-cG-Uk4"/>
+                <constraint firstAttribute="bottom" secondItem="9fI-2B-CfE" secondAttribute="bottom" id="fa0-Tg-MbG"/>
+                <constraint firstItem="9fI-2B-CfE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hKV-Qb-vMB"/>
+                <constraint firstItem="pYg-Od-gRH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="lPP-Rq-7nc"/>
+                <constraint firstItem="9fI-2B-CfE" firstAttribute="leading" secondItem="pYg-Od-gRH" secondAttribute="leading" id="sHY-pJ-ehI"/>
+                <constraint firstItem="9fI-2B-CfE" firstAttribute="top" secondItem="pYg-Od-gRH" secondAttribute="bottom" id="si7-HO-sZr"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+        </view>
+    </objects>
+</document>

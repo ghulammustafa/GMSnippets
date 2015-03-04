@@ -17,6 +17,7 @@
 #import "GMBarcodeScannerViewController.h"
 #import "GMCrasherViewController.h"
 #import "GMCompassViewController.h"
+#import "GMStringsViewController.h"
 
 #import "AFNetworking.h"
 #import "Reachability.h"
@@ -32,6 +33,8 @@ typedef enum kGMAction {
     kGMActionBarcodeScanning,
     kGMActionCompass,
     kGMActionCrasher,
+    kGMActionVisualEffects,
+    kGMActionStringsManipulation,
     kGMActionCount
 } kGMAction;
 
@@ -134,6 +137,16 @@ typedef enum kGMAction {
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             break;
             
+        case kGMActionVisualEffects:
+            cell.textLabel.text = @"Visual Effects";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            break;
+            
+        case kGMActionStringsManipulation:
+            cell.textLabel.text = @"String Manipulation";
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            break;
+            
         default:
             cell.textLabel.text = @"N/A";
             break;
@@ -187,6 +200,15 @@ typedef enum kGMAction {
             [self showCompassViewController];
             break;
             
+        case kGMActionVisualEffects:
+            [self showVisualEffectsStorybord];
+            break;
+            
+        case kGMActionStringsManipulation:
+            [self showStringsViewController];
+            break;
+            
+
         default:
             break;
     }
@@ -194,6 +216,20 @@ typedef enum kGMAction {
 
 #pragma mark -
 #pragma mark Action methods
+
+- (void)showStringsViewController {
+    GMStringsViewController *viewController = [[GMStringsViewController alloc] initWithNibName:@"GMStringsViewController" bundle:nil];
+    viewController.title = @"Strings";
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (void)showVisualEffectsStorybord {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"GMVisualEffectsStoryboard" bundle:nil];
+    UINavigationController *navigationController = [storyboard instantiateViewControllerWithIdentifier:@"VisualEffectsRootVC"];
+    [navigationController setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+    [self presentViewController:navigationController animated:YES completion:nil];
+
+}
 
 - (void)showCompassViewController {
     GMCompassViewController *viewController = [[GMCompassViewController alloc] initWithNibName:@"GMCompassViewController" bundle:nil];
