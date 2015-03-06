@@ -89,6 +89,9 @@
 		45DA459E1A9AF32E00A88B26 /* GMEventsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DA459D1A9AF32E00A88B26 /* GMEventsManager.m */; };
 		45E37B211A775F16009D470E /* BNRXIBCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E37B201A775F16009D470E /* BNRXIBCell.m */; };
 		45E37B251A775F4B009D470E /* GMCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E37B241A775F4B009D470E /* GMCollectionViewCell.m */; };
+		45F2405F1AA82E8E00489F10 /* GMSimpleVibrancyEffectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F2405E1AA82E8E00489F10 /* GMSimpleVibrancyEffectViewController.m */; };
+		45F2406E1AA837D400489F10 /* kapa_list_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45F2406C1AA837D400489F10 /* kapa_list_large.jpg */; };
+		45F2406F1AA837D400489F10 /* honma_list_large.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 45F2406D1AA837D400489F10 /* honma_list_large.jpg */; };
 		45F24AB21AA6C24A0098AC18 /* GMVisualEffectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F24AB11AA6C24A0098AC18 /* GMVisualEffectsViewController.m */; };
 		45F24AB41AA6C2600098AC18 /* GMVisualEffectsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45F24AB31AA6C2600098AC18 /* GMVisualEffectsStoryboard.storyboard */; };
 		45F24ABA1AA6CE850098AC18 /* GMDismissSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F24AB91AA6CE850098AC18 /* GMDismissSegue.m */; };
@@ -253,6 +256,10 @@
 		45E37B201A775F16009D470E /* BNRXIBCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRXIBCell.m; sourceTree = "<group>"; };
 		45E37B231A775F4B009D470E /* GMCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMCollectionViewCell.h; sourceTree = "<group>"; };
 		45E37B241A775F4B009D470E /* GMCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMCollectionViewCell.m; sourceTree = "<group>"; };
+		45F2405D1AA82E8E00489F10 /* GMSimpleVibrancyEffectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMSimpleVibrancyEffectViewController.h; sourceTree = "<group>"; };
+		45F2405E1AA82E8E00489F10 /* GMSimpleVibrancyEffectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMSimpleVibrancyEffectViewController.m; sourceTree = "<group>"; };
+		45F2406C1AA837D400489F10 /* kapa_list_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kapa_list_large.jpg; sourceTree = "<group>"; };
+		45F2406D1AA837D400489F10 /* honma_list_large.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = honma_list_large.jpg; sourceTree = "<group>"; };
 		45F24AB01AA6C24A0098AC18 /* GMVisualEffectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMVisualEffectsViewController.h; sourceTree = "<group>"; };
 		45F24AB11AA6C24A0098AC18 /* GMVisualEffectsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMVisualEffectsViewController.m; sourceTree = "<group>"; };
 		45F24AB31AA6C2600098AC18 /* GMVisualEffectsStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GMVisualEffectsStoryboard.storyboard; sourceTree = "<group>"; };
@@ -446,6 +453,8 @@
 				45F24AB11AA6C24A0098AC18 /* GMVisualEffectsViewController.m */,
 				45F24ABB1AA6D10A0098AC18 /* GMSimpleVisualEffectViewController.h */,
 				45F24ABC1AA6D10A0098AC18 /* GMSimpleVisualEffectViewController.m */,
+				45F2405D1AA82E8E00489F10 /* GMSimpleVibrancyEffectViewController.h */,
+				45F2405E1AA82E8E00489F10 /* GMSimpleVibrancyEffectViewController.m */,
 				4517F11B1AA6E9AD00D68F3E /* GMStringsViewController.h */,
 				4517F11C1AA6E9AD00D68F3E /* GMStringsViewController.m */,
 				4517F11D1AA6E9AD00D68F3E /* GMStringsViewController.xib */,
@@ -535,6 +544,8 @@
 			isa = PBXGroup;
 			children = (
 				45D866DE1A2DC3A0003345DA /* Images.xcassets */,
+				45F2406C1AA837D400489F10 /* kapa_list_large.jpg */,
+				45F2406D1AA837D400489F10 /* honma_list_large.jpg */,
 				45D866DF1A2DC3A0003345DA /* Sample.jpg */,
 				45D866E01A2DC3A0003345DA /* Sample.mov */,
 			);
@@ -729,6 +740,7 @@
 				4530F1681A6F7A800057DBC6 /* GMBarcodeScannerViewController.xib in Resources */,
 				45D866FD1A2DC3A0003345DA /* Sample.mov in Resources */,
 				45D8670A1A2DD313003345DA /* GMPrintViewController.xib in Resources */,
+				45F2406F1AA837D400489F10 /* honma_list_large.jpg in Resources */,
 				45D867051A2DCBF8003345DA /* GMMapViewController.xib in Resources */,
 				45C96C131A89E70D000CD4A7 /* SLLocalizable.strings in Resources */,
 				45D9C1761A91AF2A004A8824 /* GMCompassViewController.xib in Resources */,
@@ -742,6 +754,7 @@
 				45D866E81A2DC3A0003345DA /* GMViewController.xib in Resources */,
 				4517F11F1AA6E9AD00D68F3E /* GMStringsViewController.xib in Resources */,
 				45F24AB41AA6C2600098AC18 /* GMVisualEffectsStoryboard.storyboard in Resources */,
+				45F2406E1AA837D400489F10 /* kapa_list_large.jpg in Resources */,
 				45D866FB1A2DC3A0003345DA /* Images.xcassets in Resources */,
 				4538A3811A839C6D00CB7FE8 /* LaunchScreen.xib in Resources */,
 				45D866FC1A2DC3A0003345DA /* Sample.jpg in Resources */,
@@ -787,6 +800,7 @@
 				45D866FA1A2DC3A0003345DA /* UIWebView+AFNetworking.m in Sources */,
 				45D9C19B1A91D767004A8824 /* CLLocation+Distance.m in Sources */,
 				45D9C1971A91D767004A8824 /* CLLocation+Bearing.m in Sources */,
+				45F2405F1AA82E8E00489F10 /* GMSimpleVibrancyEffectViewController.m in Sources */,
 				45D867041A2DCBF8003345DA /* GMMapViewController.m in Sources */,
 				45D866EB1A2DC3A0003345DA /* AFHTTPSessionManager.m in Sources */,
 				4530F1791A6F8AF90057DBC6 /* UIActionSheet+Blocks.m in Sources */,

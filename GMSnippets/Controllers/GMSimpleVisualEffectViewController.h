@@ -10,6 +10,4 @@
 
 @interface GMSimpleVisualEffectViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 @end

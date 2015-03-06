@@ -84,6 +84,9 @@ Application Icon Template (Version 4.1, Last updated December 2014)
 This template includes quick rendering of every single iOS 5,6, 7 and 8 sizes along with bundled textures, colors and gradients. Automatically rendered previews of your app icon in the app store and on the homescreen and easy export actions utilizing new and improved bicubic scaling for a smoother output.
 http://appicontemplate.com/ios8
 
+Sample Images
+http://www.apple.com/iphone/world-gallery/
+
 
 HELP/ REFERENCES
 ------------------------------

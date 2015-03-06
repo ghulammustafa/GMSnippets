@@ -13,6 +13,8 @@
 
 @interface GMSimpleVisualEffectViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *actionBarButtonItem;
 
 - (IBAction)actionButtonTapped:(id)sender;

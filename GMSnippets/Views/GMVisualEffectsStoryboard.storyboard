@@ -2,35 +2,57 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Visual Effects-->
         <scene sceneID="5mY-27-Eyv">
             <objects>
                 <tableViewController id="erk-E7-Eco" customClass="GMVisualEffectsViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="40i-PG-Kch">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="40i-PG-Kch">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="DefaultCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DefaultCell" textLabel="n6C-eh-ind" rowHeight="55" style="IBUITableViewCellStyleDefault" id="Nln-8G-tdh">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nln-8G-tdh" id="L3o-Pg-9G0">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Simple UIBlurEffect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n6C-eh-ind">
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="TRN-ZE-FN4" kind="show" id="f1S-bE-aT0"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections>
+                            <tableViewSection id="u8Q-Po-90V">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="DefaultCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="n6C-eh-ind" rowHeight="55" style="IBUITableViewCellStyleDefault" id="Nln-8G-tdh">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nln-8G-tdh" id="L3o-Pg-9G0">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Simple UIBlurEffect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n6C-eh-ind">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="TRN-ZE-FN4" kind="show" id="f1S-bE-aT0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="DefaultCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="acL-iA-lZ4" rowHeight="55" style="IBUITableViewCellStyleDefault" id="Zm4-LD-GBa">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zm4-LD-GBa" id="fAi-sv-pRH">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Simple UIVibrancyEffect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="acL-iA-lZ4">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="eFR-u2-Pik" kind="show" id="Yty-T7-Aie"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="erk-E7-Eco" id="baT-Ao-eey"/>
                             <outlet property="delegate" destination="erk-E7-Eco" id="kVB-Q5-B11"/>
@@ -60,7 +82,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sample.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rVU-zp-RPb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kapa_list_large.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rVU-zp-RPb">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </imageView>
                         </subviews>
@@ -86,7 +108,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Qt-ve-b7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="9"/>
+            <point key="canvasLocation" x="1598" y="-313"/>
+        </scene>
+        <!--UIVibrancyEffect-->
+        <scene sceneID="XRe-3H-xPo">
+            <objects>
+                <viewController id="eFR-u2-Pik" customClass="GMSimpleVibrancyEffectViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Aq-TC-3kt"/>
+                        <viewControllerLayoutGuide type="bottom" id="WIh-jn-Ku5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GBO-OG-ldb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="honma_list_large.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t1Z-55-VcV">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Effect Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iPA-wO-SaB">
+                                <rect key="frame" x="150" y="84" width="300" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ThD-6e-G3z"/>
+                                    <constraint firstAttribute="width" constant="300" id="l1X-kO-LAs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WIh-jn-Ku5" firstAttribute="top" secondItem="iPA-wO-SaB" secondAttribute="bottom" constant="495" id="8NG-E6-1H3"/>
+                            <constraint firstItem="t1Z-55-VcV" firstAttribute="leading" secondItem="GBO-OG-ldb" secondAttribute="leading" id="8V9-Tf-25G"/>
+                            <constraint firstAttribute="centerY" secondItem="t1Z-55-VcV" secondAttribute="centerY" id="KXb-xi-SrF"/>
+                            <constraint firstItem="t1Z-55-VcV" firstAttribute="top" secondItem="5Aq-TC-3kt" secondAttribute="bottom" id="V8h-T7-Ifo"/>
+                            <constraint firstItem="iPA-wO-SaB" firstAttribute="top" secondItem="5Aq-TC-3kt" secondAttribute="bottom" constant="20" id="bXm-JW-xAa"/>
+                            <constraint firstAttribute="centerX" secondItem="iPA-wO-SaB" secondAttribute="centerX" id="omN-mc-Biw"/>
+                            <constraint firstItem="iPA-wO-SaB" firstAttribute="leading" secondItem="GBO-OG-ldb" secondAttribute="leadingMargin" constant="134" id="srk-jV-Wg6"/>
+                            <constraint firstAttribute="trailing" secondItem="t1Z-55-VcV" secondAttribute="trailing" id="uil-Hi-ZdL"/>
+                            <constraint firstItem="WIh-jn-Ku5" firstAttribute="top" secondItem="t1Z-55-VcV" secondAttribute="bottom" id="yjV-rp-YZv"/>
+                            <constraint firstAttribute="centerX" secondItem="t1Z-55-VcV" secondAttribute="centerX" id="z3A-QZ-V2n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iPA-wO-SaB" secondAttribute="trailing" constant="134" id="zQc-bn-LRs"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="KXb-xi-SrF"/>
+                                <exclude reference="z3A-QZ-V2n"/>
+                                <exclude reference="srk-jV-Wg6"/>
+                                <exclude reference="zQc-bn-LRs"/>
+                                <exclude reference="8NG-E6-1H3"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="UIVibrancyEffect" id="DbG-pp-KIm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="P0P-vP-6xR">
+                            <connections>
+                                <action selector="actionButtonTapped:" destination="eFR-u2-Pik" id="s2x-aq-Hb0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="actionBarButtonItem" destination="P0P-vP-6xR" id="Hkw-BM-tOT"/>
+                        <outlet property="headingLabel" destination="iPA-wO-SaB" id="pMc-mV-JY1"/>
+                        <outlet property="imageView" destination="t1Z-55-VcV" id="b9Y-WM-SmY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gTo-cx-Lfw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1597" y="366"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dTt-hg-doW">
@@ -106,7 +195,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Sample.jpg" width="577" height="1024"/>
+        <image name="honma_list_large.jpg" width="1024" height="1365"/>
+        <image name="kapa_list_large.jpg" width="1024" height="768"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fqC-f3-Idx"/>
